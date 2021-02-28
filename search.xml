@@ -8,7 +8,7 @@
       <link href="/2021/02/27/Req/%E8%A1%A5%E9%A2%98/"/>
       <url>/2021/02/27/Req/%E8%A1%A5%E9%A2%98/</url>
       
-        <content type="html"><![CDATA[<p>需要补的知识和题，以及要查的一些问题</p><a id="more"></a><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>TinyWeb为什么setsocketpair一端要setnonblock（感觉应该没区别）</p><h1 id="补题"><a href="#补题" class="headerlink" title="补题"></a>补题</h1><ol><li><p>leetcode:</p><p>递归395</p><p>回文串516, 1771</p></li></ol>]]></content>
+        <content type="html"><![CDATA[<p>需要补的知识和题，以及要查的一些问题</p><a id="more"></a><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>TinyWeb为什么setsocketpair一端要setnonblock（感觉应该没区别）</p><h1 id="补题"><a href="#补题" class="headerlink" title="补题"></a>补题</h1><ol><li><p>leetcode:</p><p>递归395</p><p>回文串516, 1771</p><p>周赛第四题车队2: 5692</p></li></ol>]]></content>
       
       
       <categories>

@@ -1,0 +1,262 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>操作系统/系统级IO | Incity</title>
+
+  
+  <meta name="author" content="lighteningzhang">
+  
+
+  
+  <meta name="description" content="Effective practice makes perfect">
+  
+
+  
+  
+  <meta name="keywords" content="I/O">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="操作系统/系统级IO"/>
+
+  <meta property="og:site_name" content="Incity"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Incity" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Incity</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+        <li><a href="/About">About</a></li>
+      
+        <li><a href="/search">Search</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>操作系统/系统级IO</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/08/05/操作系统/系统级IO/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-08-05T01:07:42.175Z">
+          2020-08-05
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>[TOC]</p>
+<h1 id="系统级I-O"><a href="#系统级I-O" class="headerlink" title="系统级I/O"></a>系统级I/O</h1><p>I/O即输入/输出(input/output)，是在主存和外部设备之间<strong>拷贝</strong>数据的过程。输入操作是从I/O设备拷贝数据到主存，输出操作是从主存拷贝数据到I/O设备。</p>
+<a id="more"></a>     
+
+<h2 id="Unix-IO"><a href="#Unix-IO" class="headerlink" title="Unix IO"></a>Unix IO</h2><p>Unix文件就是一个字节序列：</p>
+<p>$$ B_0B_1\cdots B_n $$</p>
+<p>所有的I/O设备都被模型化为文件，所有的输入输出都被当做文件来读和写来执行。将设备映射为文件, Linux内核引出了一个简单、低级的应用接口，使得所有的输入输出都以一致的方式来执行：</p>
+<ul>
+<li><p>打开文件。一个应用程序要通过内核打开相应的文件，来宣告它想访问一个I/O设备。调用操作系统提供的服务，内核返回一个非负整数，称为<strong>文件描述符</strong>。后续操作传入这个标识符即可。内核记录有关打开这个文件的所有信息，应用程序只用记录描述符。Linux shell创建的每个进程开始都有三个打开的文件：标准输入(描述符为0)、标准输出（描述符为1）、标准错误（描述符为2）。</p>
+</li>
+<li><p>改变当前的文件位置</p>
+<p>对每个打开的文件，内核保持着一个文件位置k，初始为0。这个位置是从文件开头起始的字节偏移量。应用程序可以通过seek操作，显式地指定k。</p>
+</li>
+<li><p>读写文件</p>
+<p>读操作是文件复制n个字节到内存（一般配合缓冲区），然后将k增加到k+n。长度为m字节的文件，当k&gt;=m时，指定读操作会触发EOF（end of file)。(文件结尾并未明确“EOF”符号)</p>
+</li>
+<li><p>关闭文件</p>
+<p>应用程序通知内核关闭文件。内核释放文件打开时创建的数据结构，将描述符恢复到描述符池中。无论一个进程因为哪种原因终止，内核都会关闭所有打开的文件并释放他们的内存资源。</p>
+</li>
+</ul>
+<h2 id="内核结构"><a href="#内核结构" class="headerlink" title="内核结构"></a>内核结构</h2><p>内核用三个相关的数据结构来表示打开的文件。</p>
+<ol>
+<li><p>描述符表，每个进程都有自己的描述符表，表项由进程打开的文件描述符来索引，每个表项指向文件表中的一个表项。</p>
+</li>
+<li><p>文件表</p>
+<p>文件表存放在内核空间，由系统所有进程共享。每个表项由如下组成：</p>
+<ol>
+<li>当前文件位置</li>
+<li>引用计数</li>
+<li>指向v-node表中对应表项的指针</li>
+</ol>
+<p>关闭一个描述符会减少对应文件表项中的引用计数。当引用计数为0时，内核删除这个文件表项。</p>
+</li>
+<li><p>索引节点表也存放在内核空间，由所有进程共享</p>
+</li>
+</ol>
+<p>多个描述符也可以通过不同的文件表项来引用同一个文件。如对同一个filename进行两次open操作</p>
+<p><img src="/2020/08/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%B3%BB%E7%BB%9F%E7%BA%A7IO/image-20200805100032153.png" alt="image-20200805100032153"></p>
+<p>父子共享文件如下图：</p>
+<p><img src="/2020/08/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%B3%BB%E7%BB%9F%E7%BA%A7IO/image-20200805100210583.png" alt="image-20200805100210583"></p>
+<p>子进程有一个父进程描述符表的副本。在内核删除对应文件表之前，父子进程都必须关闭描述符。</p>
+<p>一个进程对于某个文件描述符的操作也会反应到另一个进程中。</p>
+<h2 id="IO重定向"><a href="#IO重定向" class="headerlink" title="IO重定向"></a>IO重定向</h2><p><img src="/2020/08/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%B3%BB%E7%BB%9F%E7%BA%A7IO/image-20200805100751094.png" alt="image-20200805100751094"></p>
+<p>IO重定向就是把文件描述符修改为其他对应的内容。</p>
+<h2 id="标准IO"><a href="#标准IO" class="headerlink" title="标准IO"></a>标准IO</h2><p>C语言定义了一组高级输入输出函数，为标准I/O库。</p>
+<ol>
+<li>打开和关闭文件 fopen/fclose</li>
+<li>读写字节 fread/fwrite</li>
+<li>读写字符串 fgets/fputs</li>
+<li>格式化IO scanf/printf</li>
+</ol>
+<p>标准io库将打开的文件模型化为一个流，一个流就是一个指向FILE类型的指针。类型为FILE的流是对文件描述符和流缓冲区的抽象。使用缓冲区的目的是减少开销较高的Linux I/O系统调用。先对缓冲区操作，然后缓冲区满之后再用系统调用进程操作。</p>
+<p><img src="/2020/08/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%B3%BB%E7%BB%9F%E7%BA%A7IO/image-20200805105913298.png" alt="image-20200805105913298"></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/操作系统/">操作系统</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/I-O/">I/O</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+	<section id="comment" class="comment">
+		<div id="vcomments"></div>
+	</section>
+	<!-- LeanCloud -->
+	<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
+	<!-- Valine -->
+	<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+	<script>
+		new Valine({
+			el: '#vcomments',
+			appId: 'wxIUQun2GGDCis4l6FcyAkJ8-gzGzoHsz',
+			appKey: 'JY9ERkASDUoTaPjpDrP34QeV'
+		})
+	</script>
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2021 lighteningzhang
+    
+  </p>
+</footer>
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-166011346-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+      </script>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+  </div>
+</div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

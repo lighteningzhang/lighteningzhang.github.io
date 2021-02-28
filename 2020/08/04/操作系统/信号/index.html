@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>信号 | Incity</title>
+
+  
+  <meta name="author" content="lighteningzhang">
+  
+
+  
+  <meta name="description" content="Effective practice makes perfect">
+  
+
+  
+  
+  <meta name="keywords" content="信号">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="信号"/>
+
+  <meta property="og:site_name" content="Incity"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Incity" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Incity</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+        <li><a href="/About">About</a></li>
+      
+        <li><a href="/search">Search</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>信号</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/08/04/操作系统/信号/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-08-04T01:06:46.662Z">
+          2020-08-04
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="信号"><a href="#信号" class="headerlink" title="信号"></a>信号</h1><p>Unix信号是一种较高层的软件形式的异常，它允许进程中断其他进程。信号可以看作一种小道消息，它通知系统发生了某种类型的<strong>事件</strong>。</p>
+<a id="more"></a>
+
+<p>linux上支持30种不同的信号，如下表所示：</p>
+<p><img src="/2020/08/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E4%BF%A1%E5%8F%B7/image-20200804091332871.png" alt="image-20200804091332871"></p>
+<p>每种信号类型都对应于某种系统事件。低层的硬件异常是由内核异常程序处理的，正常情况下对用户进程是不可见的。信号则提供了一种机制，即通知用户发生了这些异常。比如：用户在键入<code>ctrl-c</code>内核就会发送<code>SIGINT</code>信号给该进程；一个进程也可以发送<code>SIGKILL</code>给另外一个进程来强制终止它；当子进程终止或者停止时，内核会发送<code>SIGCHLD</code>信号给父进程。</p>
+<h2 id="信号术语"><a href="#信号术语" class="headerlink" title="信号术语"></a>信号术语</h2><ol>
+<li><p>发送信号</p>
+<blockquote>
+<p>发送信号可能有如下两种原因：</p>
+<p>1) 内核检测到一个系统事件(如子进程终止或被0除)</p>
+<p>2) 一个进程调用了kill函数，显式地要求内核发送一个信号给目的进程</p>
+</blockquote>
+</li>
+<li><p>接收信号</p>
+<blockquote>
+<p>当目的进程被 内核 强迫以某种方式做出反应时，目的进程就接收了信号。用户可以通过信号处理器(signal handler)来捕获这个信号，用户也可以忽略这个信号。</p>
+</blockquote>
+</li>
+</ol>
+<p>信号处理如下图：接收到信号会触发控制转移到信号处理程序。在信号处理完成后，控制会返回到被中断的程序。</p>
+<p><img src="/2020/08/04/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E4%BF%A1%E5%8F%B7/image-20200804093805046.png" alt="image-20200804093805046"></p>
+<p>​        一个发出而未被接收的信号称为<em>待处理信号</em>。任何时刻，一种类型至多会有一个待处理信号。如果一个进程有某个类型的待处理信号（如类型为k），则接下来发送到这个进程的类型为k的信号都不会排队等待(排队队长最多为1)，它们只是被简单的丢弃。一个进程可以<strong>阻塞</strong>的接收某种信号。当一个信号被阻塞时，它仍可以被发送，但产生的待处理信号不会被接收。</p>
+<p>以下程序为接收SIGINT信号：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;signal.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">handler</span><span class="params">(<span class="keyword">int</span> signal)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Receive SIGINT"</span>);</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> (signal(SIGINT, handler) == SIG_ERR)</span><br><span class="line">       <span class="built_in">printf</span>(<span class="string">"Signal Error\n"</span>);</span><br><span class="line">   sleep(<span class="number">10</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意，在sleep的过程中接收信号，在处理信号后，会跳到sleep的下一行进行（sleep失效）。</p>
+<p>由上述可以看出，信号也是实现进程间通信的一种方式。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>信号概念</li>
+<li>发送/接收信号</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/操作系统/">操作系统</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/信号/">信号</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+	<section id="comment" class="comment">
+		<div id="vcomments"></div>
+	</section>
+	<!-- LeanCloud -->
+	<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
+	<!-- Valine -->
+	<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+	<script>
+		new Valine({
+			el: '#vcomments',
+			appId: 'wxIUQun2GGDCis4l6FcyAkJ8-gzGzoHsz',
+			appKey: 'JY9ERkASDUoTaPjpDrP34QeV'
+		})
+	</script>
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2021 lighteningzhang
+    
+  </p>
+</footer>
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-166011346-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+      </script>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+  </div>
+</div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

@@ -1,0 +1,61 @@
+article {
+  position: relative;
+  padding: 8rem 0;
+}
+#local-search-result {
+  position: relative;
+  scroll: auto;
+  overflow: auto;
+  max-height: 3500px;
+}
+ul.search-result-list {
+  padding-left: 10px;
+  list-style-type: none;
+}
+a.search-result-title {
+  font-size: 25px;
+  color: #000;
+  font-weight: bold;
+}
+p.search-result {
+  color: #9e9e9e;
+  font-size: 18px;
+}
+em.search-keyword {
+  border-bottom: 1px dashed #4088b8;
+  color: #f00;
+  font-weight: bold;
+}
+div.search {
+  padding: 10px 0;
+}
+input,
+button {
+  border: none;
+  outline: none;
+}
+input {
+  font-size: 18px;
+  width: 70%;
+  height: 42px;
+  padding-left: 13px;
+}
+.bar6 input {
+  border: 2px solid #c5464a;
+  border-radius: 5px;
+  background: transparent;
+  top: 0;
+  right: 0;
+}
+.bar6 button {
+  background: #c5464a;
+  border-radius: 0 5px 5px 0;
+  width: 60px;
+  top: 0;
+  right: 0;
+}
+.bar6 button:before {
+  content: "Search";
+  font-size: 13px;
+  color: #f9f0da;
+}

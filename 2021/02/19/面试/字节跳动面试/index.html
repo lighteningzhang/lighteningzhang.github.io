@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>字节跳动后台面试题 | Incity</title>
+
+  
+  <meta name="author" content="lighteningzhang">
+  
+
+  
+  <meta name="description" content="Effective practice makes perfect">
+  
+
+  
+  
+  <meta name="keywords" content="面试">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="字节跳动后台面试题"/>
+
+  <meta property="og:site_name" content="Incity"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Incity" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Incity</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+        <li><a href="/About">About</a></li>
+      
+        <li><a href="/search">Search</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>字节跳动后台面试题</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2021/02/19/面试/字节跳动面试/" rel="bookmark">
+        <time class="entry-date published" datetime="2021-02-19T02:44:08.304Z">
+          2021-02-19
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>面试问题</p>
+<a id="more"></a>
+
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p>第一个题是输入一个数组，返回数组内数字能组成的 <a href="https://www.nowcoder.com/jump/super-jump/word?word=最大数" target="_blank" rel="noopener">最大数</a></p>
+<p>[1,3,5] = 531</p>
+<p>[1,10,45] = 45110</p>
+<p>第二题是输入每个课程之间的关系，比如1-&gt;2，表示学习课程2需要先学习课程1，每轮学习课程 <a href="https://www.nowcoder.com/jump/super-jump/word?word=项目" target="_blank" rel="noopener">项目</a>不限，问最快几轮学习完之类的</p>
+<p>蛇形或者说之字形遍历 <a href="https://www.nowcoder.com/jump/super-jump/word?word=二叉树" target="_blank" rel="noopener">二叉树</a></p>
+<p>由于上面提到了<a href="https://www.nowcoder.com/jump/super-jump/word?word=红黑树" target="_blank" rel="noopener">红黑树</a>,追问<a href="https://www.nowcoder.com/jump/super-jump/word?word=红黑树" target="_blank" rel="noopener">红黑树</a>,然后问平衡树的定义</p>
+<p>哈希冲突除了拉链法还有什么方法</p>
+<h1 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h1><h1 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h1><p>TCP UDP相关知识 握手挥手之类的</p>
+<p>Https建立连接的过程</p>
+<p>状态码</p>
+<p>重定向转发区别</p>
+<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><p>数据库索引，为什么用索引，索引数据结构。</p>
+<p>索引的知识</p>
+<p>ACID</p>
+<p>事务并发的问题解决方法等</p>
+<p>聚簇索引和非聚簇索引</p>
+<h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><p>问<a href>项目</a>:秒杀 数据丢失怎么处理 宕机怎么处理。我提了<a href>redis</a>增减的原子性+rocketmq事物+秒杀完之后通知openresty直接拦截请求进行服务降级,中途问了几个问题，反正也和数据丢失有关,我回答我的数据不丢失的前提只保证不超卖,然后反正围绕着<a href>redis</a>原子性操作和rocketmq的事物消息答出去了,答完面试官没追问了  </p>
+<p><a href="https://www.nowcoder.com/jump/super-jump/word?word=redis" target="_blank" rel="noopener">redis</a>消息丢失?这个感觉问的很泛,不过再我的回答里面,是提到了主从防丢失 还有哨兵和cluster,然后补充了<a href="https://www.nowcoder.com/jump/super-jump/word?word=redis" target="_blank" rel="noopener">redis</a>集群/哨兵是AP的系统</p>
+<p>解释<a href="https://www.nowcoder.com/jump/super-jump/word?word=redis" target="_blank" rel="noopener">redis</a> RDB AOF</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/面试/">面试</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/面试/">面试</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+	<section id="comment" class="comment">
+		<div id="vcomments"></div>
+	</section>
+	<!-- LeanCloud -->
+	<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
+	<!-- Valine -->
+	<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+	<script>
+		new Valine({
+			el: '#vcomments',
+			appId: 'wxIUQun2GGDCis4l6FcyAkJ8-gzGzoHsz',
+			appKey: 'JY9ERkASDUoTaPjpDrP34QeV'
+		})
+	</script>
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2021 lighteningzhang
+    
+  </p>
+</footer>
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-166011346-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+      </script>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+  </div>
+</div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

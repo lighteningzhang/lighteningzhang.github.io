@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>数据库课程笔记 | Incity</title>
+
+  
+  <meta name="author" content="lighteningzhang">
+  
+
+  
+  <meta name="description" content="Effective practice makes perfect">
+  
+
+  
+  
+  <meta name="keywords" content="事务">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="数据库课程笔记"/>
+
+  <meta property="og:site_name" content="Incity"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Incity" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Incity</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+        <li><a href="/About">About</a></li>
+      
+        <li><a href="/search">Search</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>数据库课程笔记</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2021/02/17/数据库/数据库课程笔记/" rel="bookmark">
+        <time class="entry-date published" datetime="2021-02-17T12:12:26.519Z">
+          2021-02-17
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>事务和并发控制</p>
+<a id="more"></a>
+
+<p>好的中文翻译链接:</p>
+<p><a href="https://developer.aliyun.com/article/754205" target="_blank" rel="noopener">link1</a></p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210217201252638.png" alt="image-20210217201252638"></p>
+<h1 id="Atomicity"><a href="#Atomicity" class="headerlink" title="Atomicity"></a>Atomicity</h1><h2 id="Logging"><a href="#Logging" class="headerlink" title="Logging"></a>Logging</h2><p>log all actions</p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210217202823065.png" alt="image-20210217202823065"></p>
+<h2 id="Shadow-paging-less-common"><a href="#Shadow-paging-less-common" class="headerlink" title="Shadow paging(less common)"></a>Shadow paging(less common)</h2><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210217202913908.png" alt="image-20210217202913908"></p>
+<h1 id="Consistency"><a href="#Consistency" class="headerlink" title="Consistency"></a>Consistency</h1><h1 id="Isolation"><a href="#Isolation" class="headerlink" title="Isolation"></a>Isolation</h1><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210217205006805.png" alt="image-20210217205006805"></p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210217205150976.png" alt="image-20210217205150976"></p>
+<h2 id="Serializable-conflict"><a href="#Serializable-conflict" class="headerlink" title="Serializable conflict"></a>Serializable conflict</h2><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210217215205244.png" alt="image-20210217215205244"></p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210217211617184.png" alt="image-20210217211617184"></p>
+<h2 id="pessimistic"><a href="#pessimistic" class="headerlink" title="pessimistic"></a>pessimistic</h2><p>Lock</p>
+<p>(one lock)</p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210217215603060.png" alt="image-20210217215603060"></p>
+<p>basic lock types</p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210217221131095.png" alt="image-20210217221131095"></p>
+<h3 id="two-phase-locking"><a href="#two-phase-locking" class="headerlink" title="two-phase locking"></a>two-phase locking</h3><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210217221625466.png" alt="image-20210217221625466"></p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210217221906581.png" alt="image-20210217221906581"></p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210217221947795.png" alt="image-20210217221947795"></p>
+<p>​                                                                    ||    ||    ||</p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210217222131181.png" alt="image-20210217222131181"></p>
+<h3 id="2PL问题"><a href="#2PL问题" class="headerlink" title="2PL问题"></a>2PL问题</h3><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210217222239518.png" alt="image-20210217222239518"></p>
+<h3 id="deadlock-detection-amp-handling"><a href="#deadlock-detection-amp-handling" class="headerlink" title="deadlock detection &amp; handling"></a>deadlock detection &amp; handling</h3><p>detection</p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218093659092.png" alt="image-20210218093659092"></p>
+<p>handling</p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218093716213.png" alt="image-20210218093716213"></p>
+<h3 id="Deadlock-prevention"><a href="#Deadlock-prevention" class="headerlink" title="Deadlock prevention"></a>Deadlock prevention</h3><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210217230820569.png" alt="image-20210217230820569"></p>
+<h3 id="Intention-lock"><a href="#Intention-lock" class="headerlink" title="Intention lock"></a>Intention lock</h3><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218092110869.png" alt="image-20210218092110869"></p>
+<ul>
+<li>IS</li>
+<li>IX</li>
+<li>SIX</li>
+</ul>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218092328410.png" alt="image-20210218092328410"></p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218093052331.png" alt="image-20210218093052331"></p>
+<h1 id="Timestamp"><a href="#Timestamp" class="headerlink" title="Timestamp"></a>Timestamp</h1><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218093918990.png" alt="image-20210218093918990"></p>
+<h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218094002463.png" alt="image-20210218094002463"></p>
+<h2 id="How-to-allocate-the-timestamp"><a href="#How-to-allocate-the-timestamp" class="headerlink" title="How to allocate the timestamp"></a>How to allocate the timestamp</h2><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218094343494.png" alt="image-20210218094343494"></p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218094736460.png" alt="image-20210218094736460"></p>
+<p>当前事务要比之前写该对象的事务更年轻，也就是进来的时候读到的数据已经被修改了</p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218095302236.png" alt="image-20210218095302236"></p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218095707562.png" alt="image-20210218095707562"></p>
+<h3 id="eg"><a href="#eg" class="headerlink" title="eg"></a>eg</h3><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218095536113.png" alt="image-20210218095536113"></p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218100357660.png" alt="image-20210218100357660"></p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218100118386.png" alt="image-20210218100118386"></p>
+<p>会出现的问题：Ts Us Uw Tw(被忽略) Tc Uabort，Tw本来应该被保留但被忽略</p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218101654941.png" alt="image-20210218101654941"></p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218101301911.png" alt="image-20210218101301911"></p>
+<h3 id="Basic-I-O的问题"><a href="#Basic-I-O的问题" class="headerlink" title="Basic I/O的问题"></a>Basic I/O的问题</h3><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218111237260.png" alt="image-20210218111237260"></p>
+<h2 id="OPTIMISTIC-CONCURRENCY-CONTROL"><a href="#OPTIMISTIC-CONCURRENCY-CONTROL" class="headerlink" title="OPTIMISTIC CONCURRENCY CONTROL"></a>OPTIMISTIC CONCURRENCY CONTROL</h2><p>When a txn commits, the DBMS compares workspace write set to see whether it conflicts with other txns.</p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218110522070.png" alt="image-20210218110522070"></p>
+<p>validation intersection分forward validation 和 backward validation</p>
+<p>forward validation: 查看intersection在当前事务之前提交的事务，保证</p>
+<h1 id="MVCC"><a href="#MVCC" class="headerlink" title="MVCC"></a>MVCC</h1><h3 id="eg-1"><a href="#eg-1" class="headerlink" title="eg"></a>eg</h3><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218164759479.png" alt="image-20210218164759479"></p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218165826744.png" alt="image-20210218165826744"></p>
+<h2 id="Design-MVCC"><a href="#Design-MVCC" class="headerlink" title="Design MVCC"></a>Design MVCC</h2><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218165859205.png" alt="image-20210218165859205"></p>
+<p>Concurrency Control Protocol</p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218165946075.png" alt="image-20210218165946075"></p>
+<h2 id="Version-storage"><a href="#Version-storage" class="headerlink" title="Version storage"></a>Version storage</h2><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218170255824.png" alt="image-20210218170255824"></p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218170408819.png" alt="image-20210218170408819"></p>
+<h3 id="Append"><a href="#Append" class="headerlink" title="Append"></a>Append</h3><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218170608433.png" alt="image-20210218170608433"></p>
+<h3 id="Time-tranversal"><a href="#Time-tranversal" class="headerlink" title="Time-tranversal"></a>Time-tranversal</h3><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218172344883.png" alt="image-20210218172344883"></p>
+<h3 id="Delta"><a href="#Delta" class="headerlink" title="Delta"></a>Delta</h3><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218172254568.png" alt="image-20210218172254568"></p>
+<h2 id="Garbage-collection"><a href="#Garbage-collection" class="headerlink" title="Garbage collection"></a>Garbage collection</h2><p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218172911806.png" alt="image-20210218172911806"></p>
+<p><img src="/2021/02/17/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/image-20210218173006328.png" alt="image-20210218173006328"></p>
+<p>看到这儿了</p>
+<p><a href="https://youtu.be/E4u4ogqfEIA?list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi&amp;t=2492" target="_blank" rel="noopener">https://youtu.be/E4u4ogqfEIA?list=PLSE8ODhjZXjbohkNBWQs_otTrBTrjyohi&amp;t=2492</a></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/数据库/">数据库</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/事务/">事务</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+	<section id="comment" class="comment">
+		<div id="vcomments"></div>
+	</section>
+	<!-- LeanCloud -->
+	<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
+	<!-- Valine -->
+	<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+	<script>
+		new Valine({
+			el: '#vcomments',
+			appId: 'wxIUQun2GGDCis4l6FcyAkJ8-gzGzoHsz',
+			appKey: 'JY9ERkASDUoTaPjpDrP34QeV'
+		})
+	</script>
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2021 lighteningzhang
+    
+  </p>
+</footer>
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-166011346-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+      </script>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+  </div>
+</div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

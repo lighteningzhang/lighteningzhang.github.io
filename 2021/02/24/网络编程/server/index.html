@@ -97,13 +97,24 @@
         <p>网络编程</p>
 <a id="more"></a>
 
-<h3 id="阻塞与非阻塞IO"><a href="#阻塞与非阻塞IO" class="headerlink" title="阻塞与非阻塞IO"></a>阻塞与非阻塞IO</h3><p>eg:</p>
+<h1 id="已有储备"><a href="#已有储备" class="headerlink" title="已有储备"></a>已有储备</h1><h1 id="Linux-系统"><a href="#Linux-系统" class="headerlink" title="Linux 系统"></a>Linux 系统</h1><h3 id="阻塞与非阻塞IO"><a href="#阻塞与非阻塞IO" class="headerlink" title="阻塞与非阻塞IO"></a>阻塞与非阻塞IO</h3><p>eg:</p>
 <p>在read的时候，如果fd被设置为阻塞IO(默认)，则会一直阻塞在read。</p>
 <p>非阻塞在没有可读的buf时会返回。</p>
 <p>设置文件描述符非阻塞</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> flag = fcntl(connfd, F_GETFL); <span class="comment">// get file flag</span></span><br><span class="line">flag |= O_NONBLOCK;</span><br><span class="line">fcntl(connfd, F_SETFL, flag); <span class="comment">// set file flag</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="epoll"><a href="#epoll" class="headerlink" title="epoll"></a>epoll</h1><h3 id="epoll监听的事件"><a href="#epoll监听的事件" class="headerlink" title="epoll监听的事件"></a>epoll监听的事件</h3><p>关于epoll_create一个疑问（已解决）：epoll_create(int size) 会限制监听最多为size的文件描述符，那不是和epoll_wait的max_event_len重复了? 实际上，现在版本的epoll_create只需要指定大于0的size即可，内核会自动调整。如果当前响应的文件描述符超过了max_event_len，那么会采用round robin的方式（轮询），避免饥饿。</p>
+
+
+<h1 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h1><h1 id="epoll"><a href="#epoll" class="headerlink" title="epoll"></a>epoll</h1><h3 id="epoll监听的事件"><a href="#epoll监听的事件" class="headerlink" title="epoll监听的事件"></a>epoll监听的事件</h3><ul>
+<li><p>关于epoll_create一个疑问（已解决）：epoll_create(int size) 会限制监听最多为size的文件描述符，那不是和epoll_wait的max_event_len重复了? 实际上，现在版本的epoll_create只需要指定大于0的size即可，内核会自动调整。如果当前响应的文件描述符超过了max_event_len，那么会采用round robin的方式（轮询），避免饥饿。</p>
+</li>
+<li></li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">union</span> epoll_data &#123;</span><br><span class="line">	<span class="keyword">void</span>* ptr;</span><br><span class="line">   	<span class="keyword">int</span> fd;</span><br><span class="line">    ...</span><br><span class="line">&#125;<span class="keyword">epoll_event_t</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">epoll_event</span> &#123;</span></span><br><span class="line">    int32 events; <span class="comment">//可添加的感兴趣事件，在触发时表示被触发的事件</span></span><br><span class="line">  	<span class="keyword">epoll_event_t</span> data;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>针对epoll_event.events:</p>
 <p>EPOLLIN: 有连接和数据in</p>
 <p>EPOLLOUT: 缓冲区有数据写（如果不用EPOLLOUT而直接用send，可能会在缓冲区满时（此时数据可能还没写完）触发EAGAIN错误）</p>
 <p>EPOLLRDHUP: 对端断开连接</p>

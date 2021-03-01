@@ -97,13 +97,23 @@
         <p>需要补的知识和题，以及要查的一些问题</p>
 <a id="more"></a>
 
-<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>TinyWeb为什么setsocketpair一端要setnonblock（感觉应该没区别）</p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
+<li><p>TinyWeb为什么setsocketpair一端要setnonblock（感觉应该没区别）</p>
+</li>
+<li><p>自己猜测的一个结论：epoll_wait(efd,  events,  MX_EVENTS_NUM, -1) 这里等待的events 必然是小于等于efd上的节点数目。</p>
+</li>
+<li><p>为什么TinyWebServer里，工作线程在发现是连接请求的时候要用while(1) {accept}，而不是直接一次accept。如果listenfd在同一时间应该只会监听一个文件描述符？</p>
+</li>
+</ul>
 <h1 id="补题"><a href="#补题" class="headerlink" title="补题"></a>补题</h1><ol>
 <li><p>leetcode:</p>
 <p>递归395</p>
 <p>回文串516, 1771</p>
 <p>周赛第四题车队2: 5692</p>
 </li>
+</ol>
+<h1 id="要学的"><a href="#要学的" class="headerlink" title="要学的"></a>要学的</h1><ol>
+<li>Dockerfile</li>
 </ol>
 
       

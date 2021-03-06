@@ -103,6 +103,9 @@
 <p>设置文件描述符非阻塞</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> flag = fcntl(connfd, F_GETFL); <span class="comment">// get file flag</span></span><br><span class="line">flag |= O_NONBLOCK;</span><br><span class="line">fcntl(connfd, F_SETFL, flag); <span class="comment">// set file flag</span></span><br></pre></td></tr></table></figure>
 
+<h1 id="Linux函数区别"><a href="#Linux函数区别" class="headerlink" title="Linux函数区别"></a>Linux函数区别</h1><p>read与recv的区别。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">If a zero-length datagram is pending, read(2) and recv() with a flags argument of zero provide different behavior. In  this  circum‐stance, read(2) has no effect (the datagram remains pending), while recv() consumes the pending datagram</span><br></pre></td></tr></table></figure>
+
 
 
 <h1 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h1><h1 id="epoll"><a href="#epoll" class="headerlink" title="epoll"></a>epoll</h1><h3 id="epoll监听的事件"><a href="#epoll监听的事件" class="headerlink" title="epoll监听的事件"></a>epoll监听的事件</h3><ul>

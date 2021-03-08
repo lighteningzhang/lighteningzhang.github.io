@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>数据库总结</title>
+      <link href="/2021/03/08/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%80%BB%E7%BB%93/"/>
+      <url>/2021/03/08/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%80%BB%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<ul><li>事务</li><li>索引</li><li>查询优化</li><li>并发控制</li></ul><a id="more"></a>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>补题</title>
       <link href="/2021/02/27/Req/%E8%A1%A5%E9%A2%98/"/>
       <url>/2021/02/27/Req/%E8%A1%A5%E9%A2%98/</url>
       
-        <content type="html"><![CDATA[<p>需要补的知识和题，以及要查的一些问题</p><a id="more"></a><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul><li><p>TinyWeb为什么setsocketpair一端要setnonblock（感觉应该没区别）</p></li><li><p>自己猜测的一个结论：epoll_wait(efd,  events,  MX_EVENTS_NUM, -1) 这里等待的events 必然是小于等于efd上的节点数目。</p></li><li><p>为什么TinyWebServer里，工作线程在发现是连接请求的时候要用while(1) {accept}，而不是直接一次accept。如果listenfd在同一时间应该只会监听一个文件描述符？</p></li></ul><h1 id="补题"><a href="#补题" class="headerlink" title="补题"></a>补题</h1><ol><li><p>leetcode:</p><p><del>递归395</del>(每次判定左右)</p><p>回文串<del>516</del>(注意下顺序), <del>1771</del></p><p>周赛第四题车队2: 5692</p></li></ol><h1 id="要学的"><a href="#要学的" class="headerlink" title="要学的"></a>要学的</h1><ol><li>Dockerfile</li></ol>]]></content>
+        <content type="html"><![CDATA[<p>需要补的知识和题，以及要查的一些问题</p><a id="more"></a><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul><li><p>TinyWeb为什么setsocketpair一端要setnonblock（感觉应该没区别）</p></li><li><p>自己猜测的一个结论：epoll_wait(efd,  events,  MX_EVENTS_NUM, -1) 这里等待的events 必然是小于等于efd上的节点数目。</p></li><li><p>为什么TinyWebServer里，工作线程在发现是连接请求的时候要用while(1) {accept}，而不是直接一次accept。如果listenfd在同一时间应该只会监听一个文件描述符？</p></li></ul><h1 id="补题"><a href="#补题" class="headerlink" title="补题"></a>补题</h1><ol><li><p>leetcode:</p><p><del>递归395</del>(每次判定左右)</p><p>回文串<del>516</del>(注意下顺序), <del>1771</del></p><p>周赛第四题车队2: 1776(用类似链表的方法)</p><p>lc 334 以O(n)是否存在i &lt; j &lt; k同时满足nums[i] &lt; nums[j] &lt; nums[k] (用if实现3指针)</p></li></ol><h1 id="要学的"><a href="#要学的" class="headerlink" title="要学的"></a>要学的</h1><ol><li>Dockerfile</li><li>makefile</li></ol>]]></content>
       
       
       <categories>
@@ -158,7 +183,7 @@
       <link href="/2021/02/17/%E8%B5%84%E6%96%99/%E8%B5%84%E6%96%99/"/>
       <url>/2021/02/17/%E8%B5%84%E6%96%99/%E8%B5%84%E6%96%99/</url>
       
-        <content type="html"><![CDATA[<p>面试资料整理</p><a id="more"></a><h1 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h1><h2 id="TCP问题系列问题"><a href="#TCP问题系列问题" class="headerlink" title="TCP问题系列问题"></a>TCP问题系列问题</h2><p><a href="https://mp.weixin.qq.com/s/6LiZGMt2KRiIoMaLwx-lkQ" target="_blank" rel="noopener">link1</a></p><h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><p><a href="https://time.geekbang.org/column/article/67888" target="_blank" rel="noopener">极客时间数据库MySQL实战45讲</a></p><h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><p><a href="https://github.com/qinguoyi/TinyWebServer" target="_blank" rel="noopener">Tiny web 详细教程</a></p><p><a href="https://github.com/saminiir/level-ip" target="_blank" rel="noopener">实现user_level TCP协议栈</a></p><p><a href="https://blog.csdn.net/xpy870663266/article/details/78163423" target="_blank" rel="noopener">SimpleDB</a></p><h2 id="muduo"><a href="#muduo" class="headerlink" title="muduo"></a>muduo</h2><p><a href="https://www.bilibili.com/video/BV16V411k7eF?p=1" target="_blank" rel="noopener">preliminary(CMakelists.txt)</a></p><p><a href="https://blog.csdn.net/u012997311/article/details/79288696" target="_blank" rel="noopener">怎么使用muduo</a></p><p><a href="https://www.bilibili.com/video/BV1Zt411K7Gg?from=search&seid=479800820188220744" target="_blank" rel="noopener">muduo视频教程</a></p><h1 id="经验"><a href="#经验" class="headerlink" title="经验"></a>经验</h1><p><a href="https://www.nowcoder.com/discuss/590130?type=post&order=time" target="_blank" rel="noopener">c++经验</a></p><p><a href="https://github.com/521xueweihan/HelloGitHub" target="_blank" rel="noopener">神仙项目网站</a></p><p><a href="https://godweiyang.com/2020/04/24/leetcode-conclusions-110/" target="_blank" rel="noopener">godweiyang刷题博客</a></p><p><a href="https://github.com/zqy1018/my_leetcode" target="_blank" rel="noopener">zqy1018大佬周赛</a></p><p><a href="https://blog.csdn.net/weixin_40771521/article/details/103893982" target="_blank" rel="noopener">word2vec详解</a></p><p><a href="https://blog.csdn.net/armlinuxww/article/details/92803381" target="_blank" rel="noopener">epoll详解</a></p><p><a href="http://froghui.github.io/" target="_blank" rel="noopener">fronthui大佬对常用组件比较深的挖掘</a></p>]]></content>
+        <content type="html"><![CDATA[<p>面试资料整理</p><a id="more"></a><h1 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h1><h2 id="TCP问题系列问题"><a href="#TCP问题系列问题" class="headerlink" title="TCP问题系列问题"></a>TCP问题系列问题</h2><p><a href="https://mp.weixin.qq.com/s/6LiZGMt2KRiIoMaLwx-lkQ" target="_blank" rel="noopener">link1</a></p><h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><p><a href="https://time.geekbang.org/column/article/67888" target="_blank" rel="noopener">极客时间数据库MySQL实战45讲</a></p><p><a href="https://blog.csdn.net/ThinkWon/article/details/104778621" target="_blank" rel="noopener">数据库博客</a></p><h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><p><a href="https://github.com/qinguoyi/TinyWebServer" target="_blank" rel="noopener">Tiny web 详细教程</a></p><p><a href="https://github.com/saminiir/level-ip" target="_blank" rel="noopener">实现user_level TCP协议栈</a></p><p><a href="https://blog.csdn.net/xpy870663266/article/details/78163423" target="_blank" rel="noopener">SimpleDB</a></p><h2 id="muduo"><a href="#muduo" class="headerlink" title="muduo"></a>muduo</h2><p><a href="https://www.bilibili.com/video/BV16V411k7eF?p=1" target="_blank" rel="noopener">preliminary(CMakelists.txt)</a></p><p><a href="https://blog.csdn.net/u012997311/article/details/79288696" target="_blank" rel="noopener">怎么使用muduo</a></p><p><a href="https://www.bilibili.com/video/BV1Zt411K7Gg?from=search&seid=479800820188220744" target="_blank" rel="noopener">muduo视频教程</a></p><h1 id="经验"><a href="#经验" class="headerlink" title="经验"></a>经验</h1><p><a href="https://www.nowcoder.com/discuss/590130?type=post&order=time" target="_blank" rel="noopener">c++经验</a></p><p><a href="https://github.com/521xueweihan/HelloGitHub" target="_blank" rel="noopener">神仙项目网站</a></p><p><a href="https://godweiyang.com/2020/04/24/leetcode-conclusions-110/" target="_blank" rel="noopener">godweiyang刷题博客</a></p><p><a href="https://github.com/zqy1018/my_leetcode" target="_blank" rel="noopener">zqy1018大佬周赛</a></p><p><a href="https://blog.csdn.net/weixin_40771521/article/details/103893982" target="_blank" rel="noopener">word2vec详解</a></p><p><a href="https://blog.csdn.net/armlinuxww/article/details/92803381" target="_blank" rel="noopener">epoll详解</a></p><p><a href="http://froghui.github.io/" target="_blank" rel="noopener">fronthui大佬对常用组件比较深的挖掘</a></p>]]></content>
       
       
       <categories>

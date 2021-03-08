@@ -72,6 +72,75 @@
 
   
     
+    <h3 class="article-title"><a href="/2020/05/13/Algorithm/Combination math/Combination number3/"><span>Combination number 3 (lucas)</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/13/Algorithm/Combination math/Combination number3/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-13T07:11:11.752Z">
+          2020-05-13
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>lucas 算法，可以在a, b值比较大的情况下求得组合数的值，其中p为小于1e5的质数。运用的公式为$C_a^b = C_{a\ mod\ p}^{b\ mod\ p} * C_{a / p}^{b / p}$，等式的后一项可以递归求解。如果组合数已经预处理后(fact,infact均存在)，算法时间复杂度为$log_pn$。现在这个写法复杂度为$ plogn$  </p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/组合数学/">组合数学</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/13/Algorithm/Combination math/Combination number3/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2020/05/13/Algorithm/Combination math/Combination number2/"><span>Combination number 2</span></a></h3>
     
   
@@ -691,75 +760,6 @@
         <i class="icon-comments"></i>
         <span>
           <a href="/2020/05/10/Algorithm/Number Theory/Euclidean algorithm/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/05/10/Algorithm/Number Theory/Sum of factors/"><span>Sum of factors</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/05/10/Algorithm/Number Theory/Sum of factors/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-10T03:25:11.154Z">
-          2020-05-10
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>求所有约数的和，用快速幂不知道咋有问题，得用等比数列的递推求和公式: t = p*t+1。求约数的和与求所有约数个数有相通之处，这里需要注意取模的地方。</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/数论/">数论</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/05/10/Algorithm/Number Theory/Sum of factors/#comment">Comments</a>
         </span>
       </span>
     </div>

@@ -72,6 +72,81 @@
 
   
     
+    <h3 class="article-title"><a href="/2020/12/31/总结/2020年终总结/"><span>2020年终总结</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/12/31/总结/2020年终总结/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-12-31T14:58:57.597Z">
+          2020-12-31
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <ul>
+<li>做事抓重点（不管再难懂的概念都能用一句话简单表达出来，不然其实自己并没理解）</li>
+<li>文件管理（文件命名和log很重要）</li>
+<li>技术深度（类似先dfs再bfs）</li>
+<li>每段时间能进行转化</li>
+<li>总结成为自己的体系（系统性的覆盖面）</li>
+</ul>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/总结/">总结</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/年度总结/">年度总结</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/12/31/总结/2020年终总结/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2020/08/13/Algorithm/dynamic programming/硬币方案数/"><span>硬币方案数</span></a></h3>
     
   
@@ -677,75 +752,6 @@
         <i class="icon-comments"></i>
         <span>
           <a href="/2020/07/20/Leetcode/64. Minimum Path Sum/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/07/20/Leetcode/63. Unique Paths II/"><span>63. Unique Paths II</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/07/20/Leetcode/63. Unique Paths II/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-07-19T23:09:29.100Z">
-          2020-07-20
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>看了这题想起了卡特兰数，去复习了一下。卡特兰数模型是可以等价为一个0, 1的序列(前缀0的个数大于等于1的个数)，这样在2n步后，每个非目标值都可等价为往上或往右走了n-1步。因此，到目标点实际的合法次数为$C^{n}<em>{2n}-C^{n-1}</em>{2n} = C^n_{2n}/(n+1)$。<br>而不同路径这个题就比较暴力了，实际是从n+m-2步中(起始为0，终点为n-1+m-1，走的步数为n-1+m-1)选取n-1步。<br>设置障碍实际就是增加一个非法状态。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">uniquePathsWithObstacles</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="built_in">size</span>(o), m = <span class="built_in">size</span>(o[<span class="number">0</span>]);</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;dp(n, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(m, <span class="number">0</span>));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;m;j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(!i &amp;&amp; !j &amp;&amp; !o[i][j]) dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">if</span>(!o[i][j])&#123; </span><br><span class="line">                        <span class="keyword">if</span>(i&gt;=<span class="number">1</span>)dp[i][j] = dp[i<span class="number">-1</span>][j];</span><br><span class="line">                        <span class="keyword">if</span>(j&gt;=<span class="number">1</span>)dp[i][j] += dp[i][j<span class="number">-1</span>];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n<span class="number">-1</span>][m<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Leetcode/">Leetcode</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/动态规划/">动态规划</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/07/20/Leetcode/63. Unique Paths II/#comment">Comments</a>
         </span>
       </span>
     </div>

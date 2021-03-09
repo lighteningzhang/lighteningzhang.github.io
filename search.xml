@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>阿里笔试</title>
+      <link href="/2021/03/09/%E9%9D%A2%E8%AF%95/%E9%98%BF%E9%87%8C%E7%AC%94%E8%AF%95/"/>
+      <url>/2021/03/09/%E9%9D%A2%E8%AF%95/%E9%98%BF%E9%87%8C%E7%AC%94%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<p>记录阿里的笔试题目（轻虐 = =）</p><a id="more"></a><h2 id="3-6-两道hard"><a href="#3-6-两道hard" class="headerlink" title="3.6 两道hard"></a>3.6 两道hard</h2><p>第一道是线性动态规划，设计好状态转移方程就问题不大，第二道是最短路径，难点在构造最短路上。（数据范围需要使用一些trick合并）</p><p>阿里3.6笔试第一题 <a href="https://paste.ubuntu.com/p/frHYvk95zJ/" target="_blank" rel="noopener">https://paste.ubuntu.com/p/frHYvk95zJ/</a></p><p>阿里3.6笔试第二题 <a href="https://paste.ubuntu.com/p/KPK2gHc4dW/" target="_blank" rel="noopener">https://paste.ubuntu.com/p/KPK2gHc4dW/</a></p><h2 id="3-8-一道easy，一道hard"><a href="#3-8-一道easy，一道hard" class="headerlink" title="3.8 一道easy，一道hard"></a>3.8 一道easy，一道hard</h2><p>第一题需要注意一下边界，第二题是稍难的背包，主要的难点在给背包的容量设置一个上限，并且大于上限的更新均在上限处。</p><p>阿里3.8笔试第一题 <a href="https://paste.ubuntu.com/p/H2d6JRDPxD/" target="_blank" rel="noopener">https://paste.ubuntu.com/p/H2d6JRDPxD/</a></p><p>阿里3.8笔试第二题 <a href="https://paste.ubuntu.com/p/7ZqxzK2572/" target="_blank" rel="noopener">https://paste.ubuntu.com/p/7ZqxzK2572/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据库总结</title>
       <link href="/2021/03/08/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%80%BB%E7%BB%93/"/>
       <url>/2021/03/08/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B0%E6%8D%AE%E5%BA%93%E6%80%BB%E7%BB%93/</url>

@@ -95,6 +95,36 @@
         <a id="more"></a>
 
 <p>Faiss 和 一些leetcode的题目</p>
+<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><h2 id="Http协议"><a href="#Http协议" class="headerlink" title="Http协议"></a>Http协议</h2><h2 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h2><p>http1.0 </p>
+<p>content type</p>
+<p>http1.1</p>
+<p>非规范的keep alive</p>
+<p>http2.0    </p>
+<h2 id="内涵"><a href="#内涵" class="headerlink" title="内涵"></a>内涵</h2><ol>
+<li>Content-Length</li>
+<li>Content-Type：用json，protobuf等传输时指定</li>
+</ol>
+<h2 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h2><h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><p>cwnd限制速率 $|lastByteSent - lastByteAck| &lt; min{cwnd, rwnd}$</p>
+<ul>
+<li><p>快重传</p>
+<p>​    接收方每收到一个失序分组就发出重复确认，累计收到3个重复的ack则认为丢包（不会等计时器超时再重传）</p>
+</li>
+<li><p>慢启动</p>
+<p>​    一个RTT，cwnd指数大小增加</p>
+</li>
+<li><p>拥塞避免</p>
+<p>​    刚开始是和慢启动一样，达到ssthresh线性增长，增长策略是每个RTT（一个ACK可能是对多个包的确认），cwnd + 1。</p>
+</li>
+</ul>
+<ul>
+<li><p>快速恢复（TCP Reno）</p>
+<p>​    “乘性减小”</p>
+<p>​    收到连续三个重复ack，ssthresh（门限）减半（有的会加上3个MSS），之后再线性增加cwnd，进入拥塞避免阶段。</p>
+</li>
+</ul>
+<h2 id="IP协议"><a href="#IP协议" class="headerlink" title="IP协议"></a>IP协议</h2><h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><p>进程</p>
+<p>地址空间</p>
+<p>​    mmap</p>
 
       
     </div>

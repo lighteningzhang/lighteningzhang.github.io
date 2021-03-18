@@ -108,7 +108,8 @@
 
 
 
-<h1 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h1><h1 id="epoll"><a href="#epoll" class="headerlink" title="epoll"></a>epoll</h1><h3 id="epoll监听的事件"><a href="#epoll监听的事件" class="headerlink" title="epoll监听的事件"></a>epoll监听的事件</h3><ul>
+<h1 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h1><h1 id="epoll"><a href="#epoll" class="headerlink" title="epoll"></a>epoll</h1><h3 id="epoll-poll-select-区别"><a href="#epoll-poll-select-区别" class="headerlink" title="epoll poll select 区别"></a>epoll poll select 区别</h3><p>select 用数组来监听并轮询，poll 底层用链表来轮询（虽然能监听的文件描述符更多了，但本质和select类似），epoll 只返回有响应的几个事件</p>
+<h3 id="epoll监听的事件"><a href="#epoll监听的事件" class="headerlink" title="epoll监听的事件"></a>epoll监听的事件</h3><ul>
 <li><p>关于epoll_create一个疑问（已解决）：epoll_create(int size) 会限制监听最多为size的文件描述符，那不是和epoll_wait的max_event_len重复了? 实际上，现在版本的epoll_create只需要指定大于0的size即可，内核会自动调整。如果当前响应的文件描述符超过了max_event_len，那么会采用round robin的方式（轮询），避免饥饿。</p>
 </li>
 <li></li>
@@ -123,6 +124,8 @@
 <p>EPOLLRDHUP: 对端断开连接</p>
 <p>EPOLLONESHOT: 对同一文件描述符上的事件只触发一次</p>
 <h3 id="条件触发和边缘触发"><a href="#条件触发和边缘触发" class="headerlink" title="条件触发和边缘触发"></a>条件触发和边缘触发</h3><p>条件触发的意思是只要满足事件的条件，比如有数据需要读，就一直不断地把这个事件传递给用户；而边缘触发的意思是只有第一次满足条件的时候才触发，之后就不会再传递同样的事件了。</p>
+<h1 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h1><p>IP地址范围</p>
+<p><img src="https://static001.geekbang.org/resource/image/df/a9/df90239efec6e35880b9abe55089ffa9.jpg" alt="img"></p>
 <h1 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h1><h2 id><a href="#" class="headerlink" title></a></h2>
       
     </div>

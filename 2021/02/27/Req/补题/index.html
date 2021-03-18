@@ -98,12 +98,11 @@
 <a id="more"></a>
 
 <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><ul>
-<li><p>TinyWeb为什么setsocketpair一端要setnonblock（感觉应该没区别）</p>
-</li>
-<li><p>自己猜测的一个结论：epoll_wait(efd,  events,  MX_EVENTS_NUM, -1) 这里等待的events 必然是小于等于efd上的节点数目。</p>
-</li>
-<li><p>为什么TinyWebServer里，工作线程在发现是连接请求的时候要用while(1) {accept}，而不是直接一次accept。如果listenfd在同一时间应该只会监听一个文件描述符？</p>
-</li>
+<li>TinyWeb为什么setsocketpair一端要setnonblock（感觉应该没区别）</li>
+<li>自己猜测的一个结论：epoll_wait(efd,  events,  MX_EVENTS_NUM, -1) 这里等待的events 必然是小于等于efd上的节点数目。</li>
+<li><del>为什么TinyWebServer里，工作线程在发现是连接请求的时候要用while(1) {accept}，而不是直接一次accept。如果listenfd在同一时间应该只会监听一个文件描述符？</del> 这里设置了listenfd为non block，因此accept不会阻塞，在没有连接到来的情况下会返回-1。</li>
+<li>writev，读写缓冲区的作用是啥？</li>
+<li>学一下编译原理，解这个问题：为啥在recv后面放个sleep，就可以把buffer读全，不放就会再回到recv读。<a href="https://www.codenong.com/cs106961442/" target="_blank" rel="noopener">代码在这儿</a></li>
 </ul>
 <h1 id="补题"><a href="#补题" class="headerlink" title="补题"></a>补题</h1><ol>
 <li><p>leetcode:</p>
@@ -113,6 +112,9 @@
 <p>lc 334 以O(n)是否存在i &lt; j &lt; k同时满足nums[i] &lt; nums[j] &lt; nums[k] (用if实现3指针)</p>
 </li>
 </ol>
+<h1 id="学到的"><a href="#学到的" class="headerlink" title="学到的"></a>学到的</h1><ul>
+<li>EPOLLONESHOT 的作用：保证文件描述符上的事件只会被触发一次，触发一次后，这个fd上的事件就被清除了，避免多个线程同时对一个fd操作。一般在处理完后还要再重置fd上的事件。</li>
+</ul>
 <h1 id="要学的"><a href="#要学的" class="headerlink" title="要学的"></a>要学的</h1><ol>
 <li>Dockerfile</li>
 <li>makefile</li>

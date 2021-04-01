@@ -72,6 +72,289 @@
 
   
     
+    <h3 class="article-title"><a href="/2020/05/12/Algorithm/Number Theory/Mod Inverse/"><span>Mod inverse</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/12/Algorithm/Number Theory/Mod Inverse/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-12T01:15:04.318Z">
+          2020-05-12
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>逆元是模数除法的一个解决方案</p>
+<p>1) 剩余类</p>
+<p>将对模数m余数相同的数记为一类，共有m类（{0,1,…,m-1}）</p>
+<p>2) 完全剩余系</p>
+<p>从模m的每个剩余类取各一个数，得到m个数的集合，叫做模m的完全剩余系</p>
+<p>引理：若$ a_1, a_2, \cdots, a_m $为模m的完全剩余系A1，b与m互质，则$ b * a_1, b * a_2, \cdots, b * a_m $亦是m的完全剩余系A2。</p>
+<p>证明：若存在 $b * a_i \equiv b * a_j (mod\ m)$，则$ a_i \equiv a_j (mod\ m) $，又$a_i, a_j$均为m完全剩余系中的元素，故A2中不存在同一个剩余类中的2个元素。因此A2为m的完全剩余系。</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/数论/">数论</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/12/Algorithm/Number Theory/Mod Inverse/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/05/11/Algorithm/Number Theory/Fast Pow/"><span>Fast pow</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/11/Algorithm/Number Theory/Fast Pow/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-11T09:00:45.206Z">
+          2020-05-11
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>快速幂，有迭代和递归两种写法，log n复杂度，迭代方法的速度会更快</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/数论/">数论</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/11/Algorithm/Number Theory/Fast Pow/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/05/11/Algorithm/Number Theory/Euler's sifter/"><span>Euler&#39;s sifter</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/11/Algorithm/Number Theory/Euler's sifter/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-11T01:48:21.672Z">
+          2020-05-11
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>这里是用筛法求1到n每个数的欧拉函数之和。可以直接用线性素数筛的模板，需要注意的就是在筛数的时候，如果是质数，欧拉函数的值为p-1，如果不是质数，在筛数时，若primes[j]是数a的最小质因数且小于当前的i最小质因数的值，则用$p[j] * \phi(i) * \frac{p[j]-1}{p[j]}=i * (p[j]-1)$，若p[j]是i中最小质因数，则用p[j]*phi(i)来更新a的欧拉函数</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/数论/">数论</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/11/Algorithm/Number Theory/Euler's sifter/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/05/11/Algorithm/Number Theory/Euler's totient function/"><span>Euler&#39;s totient function</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/11/Algorithm/Number Theory/Euler's totient function/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-11T01:17:03.722Z">
+          2020-05-11
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>求一个数在1–N中互质的数，如果用gcd硬做会超时。借助欧拉函数可得到结论，主要的思想是对于任一数 $a=p_1^{k_1} * p_2^{k_2} * \cdots *  p_m^{k_m}$ 而言，其在1–a中同时被a和p1整除的数的个数为 a/p1，被a和p2同时整除的数为a/p2，…，这些数都需要被去除，但根据容斥原理乘积次数为偶数次的项被重复去除了，乘积为奇数次的项需要再次去除。由此可得到欧拉函数的表达式：</p>
+<p>$$ \phi(x) = x * (1-\frac{1}{p_1})(1-\frac{1}{p_2}) * \cdots * (1-\frac{1}{p_m}) $$</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/数论/">数论</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/11/Algorithm/Number Theory/Euler's totient function/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2020/05/10/Algorithm/Number Theory/Euclidean algorithm/"><span>Euclidean algorithm(gcd)</span></a></h3>
     
   
@@ -473,282 +756,6 @@
         <i class="icon-comments"></i>
         <span>
           <a href="/2020/05/09/Algorithm/Number Theory/Prime factor/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/05/09/Algorithm/Number Theory/Check prime/"><span>Check prime</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/05/09/Algorithm/Number Theory/Check prime/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-09T07:00:46.352Z">
-          2020-05-09
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>常规的判断质数，以前都用的i*i&lt;=n, 可以优化为i &lt;= n/i，避免溢出</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/数论/">数论</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/05/09/Algorithm/Number Theory/Check prime/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/05/09/Algorithm/Bipartite graph/Maximum bipartite graph matching/"><span>Maximum bipartite graph matching</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/05/09/Algorithm/Bipartite graph/Maximum bipartite graph matching/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-09T06:38:41.753Z">
-          2020-05-09
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>用到了匈牙利匹配算法，这个算法的大体流程就是为左半部的点分配右半部的点，如果产生冲突，则将冲突产生点之前的点进行重新分配，直至没有冲突为止。这个算法还可以用于多目标跟踪的匹配（毕设的时候竟然没了解这个）</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/二部图/">二部图</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/05/09/Algorithm/Bipartite graph/Maximum bipartite graph matching/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/05/09/Algorithm/Bipartite graph/Coloring bipartite graph/"><span>Coloring bipartite graph</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/05/09/Algorithm/Bipartite graph/Coloring bipartite graph/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-09T01:25:57.842Z">
-          2020-05-09
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>染色法判定二分图，和图的联通性有一些相通之处，用dfs解决，如果相连节点染色出现冲突，则说明无法划分为二分图</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/bipartite-graph/">bipartite graph</a><a href="/tags/coloring/">coloring</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/05/09/Algorithm/Bipartite graph/Coloring bipartite graph/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/05/09/Algorithm/Minimum spanning tree/Kruskal/"><span>Kruskal</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/05/09/Algorithm/Minimum spanning tree/Kruskal/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-09T00:41:04.894Z">
-          2020-05-09
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>Kruskal算法，以并查集为算法的基础，思想和prim也有些相似，先对边权排序（升序），每次将不在集合中的点加入集合，直到集合中点达到n (或看作边数达到n-1)，时间复杂度：mlogm</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/最小生成树/">最小生成树</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/05/09/Algorithm/Minimum spanning tree/Kruskal/#comment">Comments</a>
         </span>
       </span>
     </div>

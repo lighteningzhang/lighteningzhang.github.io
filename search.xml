@@ -4,6 +4,106 @@
   
     
     <entry>
+      <title>6.824</title>
+      <link href="/2021/03/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%BE%E7%A8%8B/6.824/"/>
+      <url>/2021/03/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%BE%E7%A8%8B/6.824/</url>
+      
+        <content type="html"><![CDATA[<p><a href="http://nil.csail.mit.edu/6.824/2020/schedule.html" target="_blank" rel="noopener">课程链接</a></p><p><a href="https://youtu.be/cQP8WApzIQQ?t=292" target="_blank" rel="noopener">上次观看到了</a></p><a id="more"></a><h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1><p>分布式要解决的问题：</p><p>Parallelism</p><p>Fault tolerance</p><p>Physical</p><p>Scecurity / isolated</p><p>挑战：</p><p>Concurrency</p><p>Partial failure</p><p>Performance：scalability</p><p>Infrastructure abstraction</p><p>Storage</p><p>Communications</p><p>Computation</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机课程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 分布式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>6.null</title>
+      <link href="/2021/03/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%BE%E7%A8%8B/6.null/"/>
+      <url>/2021/03/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%BE%E7%A8%8B/6.null/</url>
+      
+        <content type="html"><![CDATA[<a id="more"></a><h1 id="Linux-命令行"><a href="#Linux-命令行" class="headerlink" title="Linux 命令行"></a>Linux 命令行</h1><p>find . -name ‘*.py’  -exec rm {} ;</p><p>echo $? (查看errono)</p><p>history 查看历史</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机课程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux命令行 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>6.null</title>
+      <link href="/2021/03/19/%E5%B7%A5%E5%85%B7/6.null/"/>
+      <url>/2021/03/19/%E5%B7%A5%E5%85%B7/6.null/</url>
+      
+        <content type="html"><![CDATA[<p>命令行</p><a id="more"></a><p>tail 打印最后n行</p><p>打印最后一个：ls -l / | tail -n1</p><p>find -name / -iname 区别</p><p>tee </p><p>$_</p><p>!!</p><p>$? //啥作用</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 效率 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>对象存储</title>
+      <link href="/2021/03/19/%E5%AD%98%E5%82%A8/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/"/>
+      <url>/2021/03/19/%E5%AD%98%E5%82%A8/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8/</url>
+      
+        <content type="html"><![CDATA[<a id="more"></a><h1 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h1><p>知乎问题的经验：<a href="https://www.zhihu.com/question/43687427" target="_blank" rel="noopener">https://www.zhihu.com/question/43687427</a></p><p>《大话存储II》</p><p>《存储技术原理分析-基于linux2.6内核源代码》</p><p>FAST会议</p><p>Ceph</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 存储 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 存储 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>阿里笔试</title>
       <link href="/2021/03/09/%E9%9D%A2%E8%AF%95/%E9%98%BF%E9%87%8C%E7%AC%94%E8%AF%95/"/>
       <url>/2021/03/09/%E9%9D%A2%E8%AF%95/%E9%98%BF%E9%87%8C%E7%AC%94%E8%AF%95/</url>

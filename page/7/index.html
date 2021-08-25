@@ -72,6 +72,79 @@
 
   
     
+    <h3 class="article-title"><a href="/2020/05/12/Algorithm/Number Theory/Extended euclidean algorithm/"><span>Extended euclidean algorithm</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/12/Algorithm/Number Theory/Extended euclidean algorithm/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-12T05:36:16.553Z">
+          2020-05-12
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>1) 裴蜀定理</p>
+<p>​        对任意整数a, b，一定存在整数x, y，使得：$ax + by = gcd(a, b)$, 一定存在非零整数x, y，ax+by必为其最大公因数的倍数。</p>
+<p>2) 扩展欧几里得算法</p>
+<p>​        在欧几里得算法的基础上求得满足：$ax+by = gcd(a, b)$的一组(x, y)。</p>
+<p>其核心思想是利用欧几里得原理：$ax+by = gcd(a,b) = gcd(b,a % b) = bx’+(a-a/b*b)y’ = ay’+b(x’-a/b * y’)’$，对应系数相等，可得: $x = y’, y = (x’-a/b * y’)$，此即第一种做法。<br>第二种做法是考虑 $ b * y+a%bx = ax + b(y-a/bx) = gcd(a, b) $，对应项系数相等可得：y = y-a/bx，此为第二种做法。其实在第一种做法中，如果考虑递归时交换x, y，此时返回的x 实则是 传入递归的y，y为传入递归的x，故可看作坐标变换，因此y还需减去$a/b * x$，这样代码形式也和第二种做法一样了。</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/数论/">数论</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/12/Algorithm/Number Theory/Extended euclidean algorithm/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2020/05/12/Algorithm/Number Theory/Mod Inverse/"><span>Mod inverse</span></a></h3>
     
   
@@ -687,75 +760,6 @@
         <i class="icon-comments"></i>
         <span>
           <a href="/2020/05/09/Algorithm/Number Theory/Prime-factor prime/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/05/09/Algorithm/Number Theory/Prime factor/"><span>List prime factor</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/05/09/Algorithm/Number Theory/Prime factor/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-09T07:22:37.806Z">
-          2020-05-09
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>枚举质因数，O(sqrt(n))，最好O(log(n))</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/数论/">数论</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/05/09/Algorithm/Number Theory/Prime factor/#comment">Comments</a>
         </span>
       </span>
     </div>

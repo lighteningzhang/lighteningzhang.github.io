@@ -72,6 +72,144 @@
 
   
     
+    <h3 class="article-title"><a href="/2020/07/18/Leetcode/60. Permutation Sequence/"><span>60. Permutation Sequence</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/07/18/Leetcode/60. Permutation Sequence/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-07-17T16:21:40.804Z">
+          2020-07-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>cantor逆展开</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">fact</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span> || n==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> fact(n<span class="number">-1</span>)*n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">getPermutation</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">""</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;vis(n+<span class="number">1</span>);</span><br><span class="line">        k = k<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> m;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> t=n<span class="number">-1</span>;t&gt;=<span class="number">0</span>;t--) &#123;</span><br><span class="line">            <span class="keyword">int</span> cnt = <span class="number">0</span>, cf = fact(t);</span><br><span class="line">            <span class="keyword">int</span> cur = k/cf;</span><br><span class="line">            k = k%cf;</span><br><span class="line">            <span class="keyword">for</span>(m=<span class="number">1</span>;m&lt;=n;m++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(!vis[m]) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(!cur) <span class="keyword">break</span>;</span><br><span class="line">                    cur--;<span class="comment">// 往后走</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            vis[m] = <span class="number">1</span>;</span><br><span class="line">            res+=(<span class="string">'0'</span>+m);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Leetcode/">Leetcode</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/permutation/">permutation</a><a href="/tags/cantor/">cantor</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/07/18/Leetcode/60. Permutation Sequence/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/07/18/Leetcode/59. Spiral Matrix II/"><span>59. Spiral Matrix II</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/07/18/Leetcode/59. Spiral Matrix II/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-07-17T16:21:40.803Z">
+          2020-07-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>和第一道螺旋矩阵几乎一样</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Leetcode/">Leetcode</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/matrix/">matrix</a><a href="/tags/direction/">direction</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/07/18/Leetcode/59. Spiral Matrix II/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2020/07/18/Leetcode/58. Length of Last Word/"><span>58. Length of Last Word</span></a></h3>
     
   
@@ -611,143 +749,6 @@
         <i class="icon-comments"></i>
         <span>
           <a href="/2020/07/12/Leetcode/53 Maximum Subarray/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/07/12/Algorithm/Segment tree/Segment Tree Basis/"><span>Segment tree basis</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/07/12/Algorithm/Segment tree/Segment Tree Basis/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-07-12T13:40:24.941Z">
-          2020-07-12
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/线段树/">线段树</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/07/12/Algorithm/Segment tree/Segment Tree Basis/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/06/01/Leetcode/3 Longest Substring Without Repeating Chars/"><span>3 Longest Substring Without Repeating Chars</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/06/01/Leetcode/3 Longest Substring Without Repeating Chars/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-06-01T14:07:08.894Z">
-          2020-06-01
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>双指针+map，注意这里符号可能不是只限于a,b,c这类字符，也可能是空格，因此<del>map不能改为数组</del> ( 打脸,  这里char其实根本不用转换为int。用数组的化，数组大小就开ascii码的最大值 256</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Leetcode/">Leetcode</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/map-two-pointers/">map, two pointers</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/06/01/Leetcode/3 Longest Substring Without Repeating Chars/#comment">Comments</a>
         </span>
       </span>
     </div>

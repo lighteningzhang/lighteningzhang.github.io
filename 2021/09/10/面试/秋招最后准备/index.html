@@ -94,7 +94,8 @@
   <div class="article-content">
     <div class="entry">
       
-        <a id="more"></a>
+        <p>总拟下提纲，面试不能解决根本问题，还是需要平时的日积月累。</p>
+<a id="more"></a>
 
 <h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>操作系统是利用有限的资源（内存，cpu），调度各种各样的任务。</p>
 <p>进程、线程与协程</p>
@@ -104,7 +105,11 @@
 </ul>
 <p>父子进程</p>
 <ul>
-<li>孤儿进程、僵尸进程</li>
+<li>孤儿进程、僵尸进程<ul>
+<li>孤儿进程：父进程退出，子进程还在运行，init会接管这个子进程（循环调用wait）    </li>
+<li>僵尸：fork创建子进程，如果子进程退出，父进程没有wait或者waitpid，进程描述符仍保留在系统中。</li>
+</ul>
+</li>
 <li>fork子进程</li>
 </ul>
 <p>锁</p>
@@ -112,7 +117,13 @@
 <li>互斥、自旋</li>
 </ul>
 <p>虚拟地址空间和虚拟内存</p>
-<p>​         分段和分页，怎么结合的？</p>
+<p>​            分段和分页，怎么结合的？</p>
+<ul>
+<li>分段：内核、栈、堆、BSS（未初始化静态变量）、Data（已初始化全局数据）、Text（代码段）</li>
+<li>分页：分段是mm_struct结构体中的存放方式，是虚拟地址，分页是将虚拟地址映射到物理地址</li>
+<li>mmap：mmap是将文件fd映射到内存中（此时还是虚拟地址），mmu才是完成虚拟地址到物理地址的映射</li>
+<li>mmu</li>
+</ul>
 <p>文件系统（inode和文件名怎么对应的？是一级索引还是二级）</p>
 <h2 id="经典问题"><a href="#经典问题" class="headerlink" title="经典问题"></a>经典问题</h2><p>虚拟地址空间</p>
 <h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><h2 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h2><p>应用层</p>

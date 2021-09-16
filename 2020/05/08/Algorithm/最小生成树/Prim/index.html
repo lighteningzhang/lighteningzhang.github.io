@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  
+  <title>Prim | Incity</title>
+
+  
+  <meta name="author" content="lighteningzhang">
+  
+
+  
+  <meta name="description" content="Effective practice makes perfect">
+  
+
+  
+  
+  <meta name="keywords" content="最小生成树">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Prim"/>
+
+  <meta property="og:site_name" content="Incity"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Incity" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <script type="text/javascript" src="/js/search.js"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  
+<meta name="generator" content="Hexo 4.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+<body>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Incity</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+        <li><a href="/About">About</a></li>
+      
+        <li><a href="/search">Search</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Prim</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/08/Algorithm/最小生成树/Prim/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-08T14:29:55.052Z">
+          2020-05-08
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>Prim算法，可以看作把dij用于生成树，只是这里的权重是点到生成的集合的距离，如果能更新n次，则n个点都成功生成，否则则失败。需要注意第一个点的处理。</p>
+<a id="more"></a>
+
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">510</span>,inf=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">int</span> g[N][N];</span><br><span class="line"><span class="keyword">bool</span> st[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">prim</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> dist[N],res=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(dist,inf,<span class="keyword">sizeof</span> dist);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) &#123;  <span class="comment">//第一个点进去时，res没有更新因此需要循环n次</span></span><br><span class="line">        <span class="keyword">int</span> t = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(!st[j] &amp;&amp; (!~t||dist[t]&gt;dist[j])) &#123;   <span class="comment">//找到离当前集合最小值</span></span><br><span class="line">                t = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// cout &lt;&lt; t &lt;&lt; " " &lt;&lt; dist[t] &lt;&lt; endl;</span></span><br><span class="line">        <span class="keyword">if</span>(i &amp;&amp; dist[t]==inf) <span class="keyword">return</span> -inf; </span><br><span class="line">        <span class="keyword">if</span>(i) res+=dist[t];</span><br><span class="line">        st[t] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++) &#123;</span><br><span class="line">            dist[j] = <span class="built_in">min</span>(dist[j],g[t][j]);  <span class="comment">//用 t 去更新其他点的距离</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="built_in">memset</span>(g,inf,<span class="keyword">sizeof</span>(g));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) g[i][i] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> u,v,w;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;u,&amp;v,&amp;w);</span><br><span class="line">        g[u][v] = g[v][u] = <span class="built_in">min</span>(g[u][v],w);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> t = prim();</span><br><span class="line">    <span class="keyword">if</span>(t==-inf) <span class="built_in">puts</span>(<span class="string">"impossible"</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,t);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/最小生成树/">最小生成树</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+
+	<section id="comment" class="comment">
+		<div id="vcomments"></div>
+	</section>
+	<!-- LeanCloud -->
+	<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
+	<!-- Valine -->
+	<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+	<script>
+		new Valine({
+			el: '#vcomments',
+			appId: 'wxIUQun2GGDCis4l6FcyAkJ8-gzGzoHsz',
+			appKey: 'JY9ERkASDUoTaPjpDrP34QeV'
+		})
+	</script>
+
+
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2021 lighteningzhang
+    
+  </p>
+</footer>
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-166011346-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+      </script>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+  </div>
+</div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

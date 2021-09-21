@@ -72,6 +72,283 @@
 
   
     
+    <h3 class="article-title"><a href="/2020/05/11/Algorithm/数论/Euler's totient function/"><span>Euler&#39;s totient function</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/11/Algorithm/数论/Euler's totient function/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-11T01:17:03.722Z">
+          2020-05-11
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>求一个数在1–N中互质的数，如果用gcd硬做会超时。借助欧拉函数可得到结论，主要的思想是对于任一数 $a=p_1^{k_1} * p_2^{k_2} * \cdots *  p_m^{k_m}$ 而言，其在1–a中同时被a和p1整除的数的个数为 a/p1，被a和p2同时整除的数为a/p2，…，这些数都需要被去除，但根据容斥原理乘积次数为偶数次的项被重复去除了，乘积为奇数次的项需要再次去除。由此可得到欧拉函数的表达式：</p>
+<p>$$ \phi(x) = x * (1-\frac{1}{p_1})(1-\frac{1}{p_2}) * \cdots * (1-\frac{1}{p_m}) $$</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/数论/">数论</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/11/Algorithm/数论/Euler's totient function/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/05/10/Algorithm/数论/Euclidean algorithm/"><span>Euclidean algorithm(gcd)</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/10/Algorithm/数论/Euclidean algorithm/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-10T10:06:02.888Z">
+          2020-05-10
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>gcd算法(greatest common divisor)，也称辗转相除算法或欧几里得算法，原理的证明比较简单，假设a,b最大公约数为d，则 d|a, d|b，且d|(xa+yb)，又由于a%b = a-a/b*b = a+yb，因此 d = (b,a%b)。由此得证。需注意这里a，b不用分大小，因gcd(a,b) = gcd(b,a)。</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/数论/">数论</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/10/Algorithm/数论/Euclidean algorithm/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/05/10/Algorithm/数论/Sum of factors/"><span>Sum of factors</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/10/Algorithm/数论/Sum of factors/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-10T03:25:11.154Z">
+          2020-05-10
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>求所有约数的和，用快速幂不知道咋有问题，得用等比数列的递推求和公式: t = p*t+1。求约数的和与求所有约数个数有相通之处，这里需要注意取模的地方。</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/数论/">数论</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/10/Algorithm/数论/Sum of factors/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/05/10/Algorithm/数论/Number of factors/"><span>Number of factors</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/10/Algorithm/数论/Number of factors/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-10T02:12:52.309Z">
+          2020-05-10
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>求多个数相乘的约数个数，如6的约数个数是4：1，2，3，6。解决方案是考虑将约数分解为质因数指数幂的乘积形式。<br>如$ 6 = 2^1*3^1 $，考虑每个质因数可以选取不同个数和其他质因数配对，假设每个质因数的个数分别为：$a_1,a_2,a_3,\cdots,a_i$，则总的约数个数为$(a_1+1)(a_2+1)(a_3+1)\cdots(a_i+1)$</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/数论/">数论</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/10/Algorithm/数论/Number of factors/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2020/05/10/Algorithm/数论/Find factors/"><span>Find factors</span></a></h3>
     
   
@@ -473,282 +750,6 @@
         <i class="icon-comments"></i>
         <span>
           <a href="/2020/05/09/Algorithm/二部图/Coloring bipartite graph/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/05/09/Algorithm/最小生成树/Kruskal/"><span>Kruskal</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/05/09/Algorithm/最小生成树/Kruskal/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-09T00:41:04.894Z">
-          2020-05-09
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>Kruskal算法，以并查集为算法的基础，思想和prim也有些相似，先对边权排序（升序），每次将不在集合中的点加入集合，直到集合中点达到n (或看作边数达到n-1)，时间复杂度：mlogm</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/最小生成树/">最小生成树</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/05/09/Algorithm/最小生成树/Kruskal/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/05/08/Algorithm/最小生成树/Prim/"><span>Prim</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/05/08/Algorithm/最小生成树/Prim/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-08T14:29:55.052Z">
-          2020-05-08
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>Prim算法，可以看作把dij用于生成树，只是这里的权重是点到生成的集合的距离，如果能更新n次，则n个点都成功生成，否则则失败。需要注意第一个点的处理。</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/最小生成树/">最小生成树</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/05/08/Algorithm/最小生成树/Prim/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/05/08/Algorithm/最短路/Floyd/"><span>Floyd</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/05/08/Algorithm/最短路/Floyd/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-08T07:33:06.973Z">
-          2020-05-08
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>Floyd 用于求多源最短路，即可算任意两点间的最短路，复杂度O(n^3)。其代码量比较小，主要的思想就是在计算两点i，j间的最短路时，考虑经过中间点k和不经过中间点k的情况，其思想和dp类型。</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/最短路/">最短路</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/05/08/Algorithm/最短路/Floyd/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/05/08/Algorithm/最短路/checkNegativeCircle/"><span>Check negative circle</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/05/08/Algorithm/最短路/checkNegativeCircle/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-08T06:40:28.723Z">
-          2020-05-08
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>判断负环，这里用了两种方法，spfa和bellman-ford，实际bellman要快些，bellman复杂度为O(nm)。</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/最短路/">最短路</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/05/08/Algorithm/最短路/checkNegativeCircle/#comment">Comments</a>
         </span>
       </span>
     </div>

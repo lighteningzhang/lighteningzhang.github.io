@@ -72,6 +72,144 @@
 
   
     
+    <h3 class="article-title"><a href="/2020/05/11/Algorithm/数论/Fast Pow/"><span>Fast pow</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/11/Algorithm/数论/Fast Pow/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-11T09:00:45.206Z">
+          2020-05-11
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>快速幂，有迭代和递归两种写法，log n复杂度，迭代方法的速度会更快</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/数论/">数论</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/11/Algorithm/数论/Fast Pow/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/05/11/Algorithm/数论/Euler's sifter/"><span>Euler&#39;s sifter</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/11/Algorithm/数论/Euler's sifter/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-11T01:48:21.672Z">
+          2020-05-11
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>这里是用筛法求1到n每个数的欧拉函数之和。可以直接用线性素数筛的模板，需要注意的就是在筛数的时候，如果是质数，欧拉函数的值为p-1，如果不是质数，在筛数时，若primes[j]是数a的最小质因数且小于当前的i最小质因数的值，则用$p[j] * \phi(i) * \frac{p[j]-1}{p[j]}=i * (p[j]-1)$，若p[j]是i中最小质因数，则用p[j]*phi(i)来更新a的欧拉函数</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/数论/">数论</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/11/Algorithm/数论/Euler's sifter/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2020/05/11/Algorithm/数论/Euler's totient function/"><span>Euler&#39;s totient function</span></a></h3>
     
   
@@ -612,144 +750,6 @@
         <i class="icon-comments"></i>
         <span>
           <a href="/2020/05/09/Algorithm/数论/Check prime/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/05/09/Algorithm/二部图/Maximum bipartite graph matching/"><span>Maximum bipartite graph matching</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/05/09/Algorithm/二部图/Maximum bipartite graph matching/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-09T06:38:41.753Z">
-          2020-05-09
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>用到了匈牙利匹配算法，这个算法的大体流程就是为左半部的点分配右半部的点，如果产生冲突，则将冲突产生点之前的点进行重新分配，直至没有冲突为止。这个算法还可以用于多目标跟踪的匹配（毕设的时候竟然没了解这个）</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/二部图/">二部图</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/05/09/Algorithm/二部图/Maximum bipartite graph matching/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/05/09/Algorithm/二部图/Coloring bipartite graph/"><span>Coloring bipartite graph</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/05/09/Algorithm/二部图/Coloring bipartite graph/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-09T01:25:57.842Z">
-          2020-05-09
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>染色法判定二分图，和图的联通性有一些相通之处，用dfs解决，如果相连节点染色出现冲突，则说明无法划分为二分图</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/bipartite-graph/">bipartite graph</a><a href="/tags/coloring/">coloring</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/05/09/Algorithm/二部图/Coloring bipartite graph/#comment">Comments</a>
         </span>
       </span>
     </div>

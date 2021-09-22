@@ -220,6 +220,11 @@
 <li>Message</li>
 </ul>
 </li>
+<li>补充<ul>
+<li>Frame仍是最小单元（类比HTTP2），多个Frame组合成为Packet，多个Packet可能在一次UDP传输中发出。多个Packet组成Stream</li>
+<li>Stream之间相互独立，某个流出现丢包并不影响其他流。（避免队头阻塞）</li>
+</ul>
+</li>
 </ul>
 <h1 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h1><p><a href="https://blog.csdn.net/yunhua_lee" target="_blank" rel="noopener">李运华大佬博客</a></p>
 <h1 id="行业大佬"><a href="#行业大佬" class="headerlink" title="行业大佬"></a>行业大佬</h1><p>开源kafka</p>

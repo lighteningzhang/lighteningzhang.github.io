@@ -72,14 +72,290 @@
 
   
     
-    <h3 class="article-title"><a href="/2020/05/12/Algorithm/数论/Mod Inverse/"><span>Mod inverse</span></a></h3>
+    <h3 class="article-title"><a href="/2020/05/14/Algorithm/组合数学/Catalan Number/"><span>Catalan number</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2020/05/12/Algorithm/数论/Mod Inverse/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-12T01:15:04.318Z">
+      <a href="/2020/05/14/Algorithm/组合数学/Catalan Number/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-14T09:31:38.314Z">
+          2020-05-14
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>卡特兰数，还有很多应用的情况需要总结。这里就先列出其表达式: $\frac{C^n_{2n}}{n+1}$，计算就用组合数的计算和逆元即可。</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/组合数学/">组合数学</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/14/Algorithm/组合数学/Catalan Number/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/05/14/Algorithm/组合数学/Combination number4/"><span>Combination number (high precision)</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/14/Algorithm/组合数学/Combination number4/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-14T01:56:44.588Z">
+          2020-05-14
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>高精度求组合数，借助公式 $C^b_a = \frac{a!}{(a-b)!b!}$, 可以考虑将a!, b!, (a-b)!, 分解为质因数的乘积，这样只需将这些质因数用高精度乘法相乘即可。质因数可用线性素数筛选出，选出后，计算a!, b!, (a-b)!中包含p的次数。对一个数n而言，n!包含其质因数p的次数为$n/p+n/p^2+n/p^3+…$。最后从a!将b!, (a-b)!中的质因数除去。用高精度乘法计算剩余的质因数乘积即可。</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/组合数学/">组合数学</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/14/Algorithm/组合数学/Combination number4/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/05/13/Algorithm/组合数学/Combination number3/"><span>Combination number 3 (lucas)</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/13/Algorithm/组合数学/Combination number3/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-13T07:11:11.752Z">
+          2020-05-13
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>lucas 算法，可以在a, b值比较大的情况下求得组合数的值，其中p为小于1e5的质数。运用的公式为$C_a^b = C_{a\ mod\ p}^{b\ mod\ p} * C_{a / p}^{b / p}$，等式的后一项可以递归求解。如果组合数已经预处理后(fact,infact均存在)，算法时间复杂度为$log_pn$。现在这个写法复杂度为$ plogn$  </p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/组合数学/">组合数学</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/13/Algorithm/组合数学/Combination number3/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/05/13/Algorithm/组合数学/Combination number2/"><span>Combination number 2</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/13/Algorithm/组合数学/Combination number2/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-13T05:48:30.876Z">
+          2020-05-13
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>数据复杂度在1e10时，不能再使用此前打表迭代的做法。比较直观的想法是从表达式入手，$ C_a^b = \frac{a!}{(a-b)! * b!} $, 用两个表来记录 fact的值，和逆元fact的值即可将时间复杂度变为NlogN。</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/组合数学/">组合数学</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/13/Algorithm/组合数学/Combination number2/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/05/12/Algorithm/组合数学/Combination number1/"><span>Combination number1</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/12/Algorithm/组合数学/Combination number1/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-12T13:24:36.379Z">
           2020-05-12
         </time>
       </a>
@@ -92,13 +368,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>逆元是模数除法的一个解决方案</p>
-<p>1) 剩余类</p>
-<p>将对模数m余数相同的数记为一类，共有m类（{0,1,…,m-1}）</p>
-<p>2) 完全剩余系</p>
-<p>从模m的每个剩余类取各一个数，得到m个数的集合，叫做模m的完全剩余系</p>
-<p>引理：若$ a_1, a_2, \cdots, a_m $为模m的完全剩余系A1，b与m互质，则$ b * a_1, b * a_2, \cdots, b * a_m $亦是m的完全剩余系A2。</p>
-<p>证明：若存在 $b * a_i \equiv b * a_j (mod\ m)$，则$ a_i \equiv a_j (mod\ m) $，又$a_i, a_j$均为m完全剩余系中的元素，故A2中不存在同一个剩余类中的2个元素。因此A2为m的完全剩余系。</p>
+        <p>当求组合数的预处理时间复杂度在1e6左右时，可以用类似迭代的方式求得$ C_a^b $的值，用到的迭代公式是$ C_i^j = C_{i-1}^j+C_{i-1}^{j-1}  $，即根据j中是否包含某点来确定组合数的值。</p>
         
       
     </div>
@@ -122,7 +392,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/数论/">数论</a>
+        <a href="/tags/组合数学/">组合数学</a>
     </span>
     
 
@@ -133,7 +403,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2020/05/12/Algorithm/数论/Mod Inverse/#comment">Comments</a>
+          <a href="/2020/05/12/Algorithm/组合数学/Combination number1/#comment">Comments</a>
         </span>
       </span>
     </div>
@@ -147,15 +417,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2020/05/11/Algorithm/数论/Fast Pow/"><span>Fast pow</span></a></h3>
+    <h3 class="article-title"><a href="/2020/08/13/Algorithm/动态规划/硬币方案数/"><span>硬币方案数</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2020/05/11/Algorithm/数论/Fast Pow/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-11T09:00:45.206Z">
-          2020-05-11
+      <a href="/2020/08/13/Algorithm/动态规划/硬币方案数/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-08-13T02:25:19.791Z">
+          2020-08-13
         </time>
       </a>
     </span>
@@ -167,8 +437,9 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>快速幂，有迭代和递归两种写法，log n复杂度，迭代方法的速度会更快</p>
-        
+        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>给定面值的几个硬币(1, 5, 10, 25)，用它们组成n，求方案数。leetcode <a href="https://leetcode-cn.com/problems/coin-lcci/" target="_blank" rel="noopener">链接</a></p>
+<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><p>很容易想到该问题有点像完全背包问题，用完全背包来写很快就得到解决方案了。</p>
+
       
     </div>
 
@@ -191,7 +462,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/数论/">数论</a>
+        <a href="/tags/动态规划/">动态规划</a>
     </span>
     
 
@@ -202,7 +473,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2020/05/11/Algorithm/数论/Fast Pow/#comment">Comments</a>
+          <a href="/2020/08/13/Algorithm/动态规划/硬币方案数/#comment">Comments</a>
         </span>
       </span>
     </div>
@@ -216,15 +487,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2020/05/11/Algorithm/数论/Euler's sifter/"><span>Euler&#39;s sifter</span></a></h3>
+    <h3 class="article-title"><a href="/2020/07/20/力扣/67. Add Binary/"><span>67. Add Binary</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2020/05/11/Algorithm/数论/Euler's sifter/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-11T01:48:21.672Z">
-          2020-05-11
+      <a href="/2020/07/20/力扣/67. Add Binary/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-07-19T23:09:29.117Z">
+          2020-07-20
         </time>
       </a>
     </span>
@@ -236,8 +507,8 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>这里是用筛法求1到n每个数的欧拉函数之和。可以直接用线性素数筛的模板，需要注意的就是在筛数的时候，如果是质数，欧拉函数的值为p-1，如果不是质数，在筛数时，若primes[j]是数a的最小质因数且小于当前的i最小质因数的值，则用$p[j] * \phi(i) * \frac{p[j]-1}{p[j]}=i * (p[j]-1)$，若p[j]是i中最小质因数，则用p[j]*phi(i)来更新a的欧拉函数</p>
-        
+        <p>和上一题是类似的题，通法就是先翻转（低位和高位从0到n), 然后用进位t来加当前的数，模进制更新结果，除以进制，更新进位</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span></span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">addBinary</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">size</span>(a)) <span class="keyword">return</span> b;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">size</span>(b)) <span class="keyword">return</span> a;</span><br><span class="line">        reverse(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>());</span><br><span class="line">        reverse(b.<span class="built_in">begin</span>(), b.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">string</span> s = ;</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>, n =<span class="built_in">max</span>(a.<span class="built_in">size</span>(), b.<span class="built_in">size</span>()) ;</span><br><span class="line">        <span class="keyword">while</span>((j&lt;n) || t0) &#123;</span><br><span class="line">            <span class="keyword">if</span>(a.<span class="built_in">size</span>()) t+=(a[j]-<span class="string">'0'</span>);</span><br><span class="line">            <span class="keyword">if</span>(b.<span class="built_in">size</span>()) t+=(b[j]-<span class="string">'0'</span>);</span><br><span class="line">            s+=(<span class="string">'0'</span>+t%<span class="number">2</span>);</span><br><span class="line">            t=<span class="number">2</span>;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        reverse(s.<span class="built_in">begin</span>(), s.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -251,17 +522,10 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
+        <a href="/categories/Leetcode/">Leetcode</a>
     </span>
     
 
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/数论/">数论</a>
-    </span>
     
 
     </div>
@@ -271,7 +535,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2020/05/11/Algorithm/数论/Euler's sifter/#comment">Comments</a>
+          <a href="/2020/07/20/力扣/67. Add Binary/#comment">Comments</a>
         </span>
       </span>
     </div>
@@ -285,15 +549,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2020/05/11/Algorithm/数论/Euler's totient function/"><span>Euler&#39;s totient function</span></a></h3>
+    <h3 class="article-title"><a href="/2020/07/20/力扣/66. Plus One/"><span>66. Plus One</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2020/05/11/Algorithm/数论/Euler's totient function/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-11T01:17:03.722Z">
-          2020-05-11
+      <a href="/2020/07/20/力扣/66. Plus One/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-07-19T23:09:29.113Z">
+          2020-07-20
         </time>
       </a>
     </span>
@@ -305,9 +569,8 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>求一个数在1–N中互质的数，如果用gcd硬做会超时。借助欧拉函数可得到结论，主要的思想是对于任一数 $a=p_1^{k_1} * p_2^{k_2} * \cdots *  p_m^{k_m}$ 而言，其在1–a中同时被a和p1整除的数的个数为 a/p1，被a和p2同时整除的数为a/p2，…，这些数都需要被去除，但根据容斥原理乘积次数为偶数次的项被重复去除了，乘积为奇数次的项需要再次去除。由此可得到欧拉函数的表达式：</p>
-<p>$$ \phi(x) = x * (1-\frac{1}{p_1})(1-\frac{1}{p_2}) * \cdots * (1-\frac{1}{p_m}) $$</p>
-        
+        <p>刚开始做暴力建了个数组，之后看了下还有翻转再加的做法，主要是利用push_back加上最后的进位。<br>这个问题还有个更优雅的解法，就是 if else add<br>如果进位，遇到9则变0，遇到其他就返回，最后一位要进位的唯一一种情况是所有数字都是9，这样整个数组变为0，只需要第一位变成1再push_back 0就完成了加法</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">plusOne</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; digits)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = <span class="built_in">size</span>(digits);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=n<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--) &#123;</span><br><span class="line">            <span class="keyword">if</span>(digits[i]==<span class="number">9</span>) digits[i]=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                digits[i] = digits[i]+<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">return</span> digits;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(digits[<span class="number">0</span>]==<span class="number">0</span>) digits[<span class="number">0</span>] = <span class="number">1</span>, digits.push_back(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> digits;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -321,7 +584,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
+        <a href="/categories/Leetcode/">Leetcode</a>
     </span>
     
 
@@ -330,7 +593,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/数论/">数论</a>
+        <a href="/tags/implementation/">implementation</a>
     </span>
     
 
@@ -341,7 +604,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2020/05/11/Algorithm/数论/Euler's totient function/#comment">Comments</a>
+          <a href="/2020/07/20/力扣/66. Plus One/#comment">Comments</a>
         </span>
       </span>
     </div>
@@ -355,15 +618,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2020/05/10/Algorithm/数论/Euclidean algorithm/"><span>Euclidean algorithm(gcd)</span></a></h3>
+    <h3 class="article-title"><a href="/2020/07/20/力扣/65. Valid Number/"><span>65. Valid Number</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2020/05/10/Algorithm/数论/Euclidean algorithm/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-10T10:06:02.888Z">
-          2020-05-10
+      <a href="/2020/07/20/力扣/65. Valid Number/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-07-19T23:09:29.112Z">
+          2020-07-20
         </time>
       </a>
     </span>
@@ -375,8 +638,8 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>gcd算法(greatest common divisor)，也称辗转相除算法或欧几里得算法，原理的证明比较简单，假设a,b最大公约数为d，则 d|a, d|b，且d|(xa+yb)，又由于a%b = a-a/b*b = a+yb，因此 d = (b,a%b)。由此得证。需注意这里a，b不用分大小，因gcd(a,b) = gcd(b,a)。</p>
-        
+        <p>苦力活，完全是靠报错来更正…</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isNumber</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">bool</span> e = <span class="number">0</span>, sig = <span class="number">0</span>, f=<span class="number">1</span>,p=<span class="number">0</span>, dig=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>,j = <span class="built_in">size</span>(s)<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;<span class="built_in">size</span>(s) &amp;&amp; s[i]==<span class="string">' '</span>) i++;</span><br><span class="line">        <span class="keyword">while</span>(j&gt;=<span class="number">0</span> &amp;&amp; s[j]==<span class="string">' '</span>) j--;</span><br><span class="line">        <span class="keyword">if</span>(j&gt;=i)</span><br><span class="line">            s = s.substr(i, j-i+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(s==<span class="string">"."</span>|| s==<span class="string">"+"</span>|| s==<span class="string">"-"</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;i:s) &#123;</span><br><span class="line">            <span class="keyword">if</span>(f &amp;&amp; (i==<span class="string">'+'</span> || i==<span class="string">'-'</span>)) <span class="keyword">if</span>(!sig&amp;&amp;!dig) sig = <span class="number">1</span>,f=<span class="number">0</span>; <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(i&gt;=<span class="string">'0'</span> &amp;&amp; i&lt;=<span class="string">'9'</span>) &#123;</span><br><span class="line">                dig = <span class="number">1</span>;</span><br><span class="line">                f = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(i==<span class="string">'e'</span> &amp;&amp; dig) &#123;</span><br><span class="line">                <span class="keyword">if</span>(!e) e=<span class="number">1</span>,sig=<span class="number">0</span>,f=<span class="number">1</span>,dig=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(i==<span class="string">'.'</span> ) &#123;</span><br><span class="line">                f = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(!e &amp;&amp; !p) p = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>((e &amp;&amp; !dig) || (sig &amp;&amp; !dig)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -390,7 +653,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
+        <a href="/categories/Leetcode/">Leetcode</a>
     </span>
     
 
@@ -399,7 +662,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/数论/">数论</a>
+        <a href="/tags/stuffa/">stuffa</a>
     </span>
     
 
@@ -410,7 +673,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2020/05/10/Algorithm/数论/Euclidean algorithm/#comment">Comments</a>
+          <a href="/2020/07/20/力扣/65. Valid Number/#comment">Comments</a>
         </span>
       </span>
     </div>
@@ -424,15 +687,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2020/05/10/Algorithm/数论/Sum of factors/"><span>Sum of factors</span></a></h3>
+    <h3 class="article-title"><a href="/2020/07/18/力扣/1513. Number of Substrings With Only 1s/"><span>1513. Number of Substrings With Only 1s</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2020/05/10/Algorithm/数论/Sum of factors/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-10T03:25:11.154Z">
-          2020-05-10
+      <a href="/2020/07/18/力扣/1513. Number of Substrings With Only 1s/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-07-17T16:21:40.806Z">
+          2020-07-18
         </time>
       </a>
     </span>
@@ -444,7 +707,7 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>求所有约数的和，用快速幂不知道咋有问题，得用等比数列的递推求和公式: t = p*t+1。求约数的和与求所有约数个数有相通之处，这里需要注意取模的地方。</p>
+        <p>Simple if else and add method</p>
         
       
     </div>
@@ -459,7 +722,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
+        <a href="/categories/Leetcode/">Leetcode</a>
     </span>
     
 
@@ -468,7 +731,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/数论/">数论</a>
+        <a href="/tags/if-else-add/">if else add</a>
     </span>
     
 
@@ -479,283 +742,7 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2020/05/10/Algorithm/数论/Sum of factors/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/05/10/Algorithm/数论/Number of factors/"><span>Number of factors</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/05/10/Algorithm/数论/Number of factors/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-10T02:12:52.309Z">
-          2020-05-10
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>求多个数相乘的约数个数，如6的约数个数是4：1，2，3，6。解决方案是考虑将约数分解为质因数指数幂的乘积形式。<br>如$ 6 = 2^1*3^1 $，考虑每个质因数可以选取不同个数和其他质因数配对，假设每个质因数的个数分别为：$a_1,a_2,a_3,\cdots,a_i$，则总的约数个数为$(a_1+1)(a_2+1)(a_3+1)\cdots(a_i+1)$</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/数论/">数论</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/05/10/Algorithm/数论/Number of factors/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/05/10/Algorithm/数论/Find factors/"><span>Find factors</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/05/10/Algorithm/数论/Find factors/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-10T01:17:33.542Z">
-          2020-05-10
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>试除法求约数，时间复杂度nsqrt(a)，和判断素数有点类似</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/数论/">数论</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/05/10/Algorithm/数论/Find factors/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/05/09/Algorithm/数论/Prime-factor prime/"><span>Prime-factor prime</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/05/09/Algorithm/数论/Prime-factor prime/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-09T07:36:23.808Z">
-          2020-05-09
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>素数筛，有三种筛法：朴素，埃氏，线性。复杂度分别为 nlogn, nloglogn, n</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/数论/">数论</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/05/09/Algorithm/数论/Prime-factor prime/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/05/09/Algorithm/数论/Prime factor/"><span>List prime factor</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/05/09/Algorithm/数论/Prime factor/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-05-09T07:22:37.806Z">
-          2020-05-09
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>枚举质因数，O(sqrt(n))，最好O(log(n))</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/数论/">数论</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/05/09/Algorithm/数论/Prime factor/#comment">Comments</a>
+          <a href="/2020/07/18/力扣/1513. Number of Substrings With Only 1s/#comment">Comments</a>
         </span>
       </span>
     </div>

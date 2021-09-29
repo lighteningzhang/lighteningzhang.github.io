@@ -72,6 +72,83 @@
 
   
     
+    <h3 class="article-title"><a href="/2021/04/03/分布式系统/分布式系统学习/"><span>分布式系统学习</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2021/04/03/分布式系统/分布式系统学习/" rel="bookmark">
+        <time class="entry-date published" datetime="2021-04-03T08:44:25.715Z">
+          2021-04-03
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <a id="more"></a>
+
+<h1 id="Paper-Reading"><a href="#Paper-Reading" class="headerlink" title="Paper Reading"></a>Paper Reading</h1><h2 id="GFS"><a href="#GFS" class="headerlink" title="GFS"></a>GFS</h2><p>对client支持 open, write（追加写）, close, read 等操作。</p>
+<p>每个文件和chunk server的对应关系存储在master中</p>
+<ol>
+<li>分了两层，master管理chunk server</li>
+<li>master上存了文件和chunk server的对应关系(动态更新)</li>
+</ol>
+<p><img src="/2021/04/03/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0/image-20210403165415234.png" alt="image-20210403165415234"></p>
+<h2 id="Big-Table"><a href="#Big-Table" class="headerlink" title="Big Table"></a>Big Table</h2>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/分布式系统/">分布式系统</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/分布式/">分布式</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2021/04/03/分布式系统/分布式系统学习/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2021/03/31/计算机课程/6.824/"><span>6.824</span></a></h3>
     
   
@@ -703,75 +780,6 @@
         <i class="icon-comments"></i>
         <span>
           <a href="/2021/02/19/面试/字节跳动面试/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2021/02/18/数据库/数据库查询/"><span>数据库查询</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2021/02/18/数据库/数据库查询/" rel="bookmark">
-        <time class="entry-date published" datetime="2021-02-18T12:18:00.593Z">
-          2021-02-18
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>query processing</p>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/数据库/">数据库</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/查询/">查询</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2021/02/18/数据库/数据库查询/#comment">Comments</a>
         </span>
       </span>
     </div>

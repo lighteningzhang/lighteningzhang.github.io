@@ -3,7 +3,7 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>一些疑问 | Incity</title>
+  <title>第40周总结 | Incity</title>
 
   
   <meta name="author" content="lighteningzhang">
@@ -15,14 +15,14 @@
 
   
   
-  <meta name="keywords" content="问题">
+  <meta name="keywords" content="总结">
   
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <meta property="og:title" content="一些疑问"/>
+  <meta property="og:title" content="第40周总结"/>
 
   <meta property="og:site_name" content="Incity"/>
 
@@ -74,15 +74,15 @@
 
   
     
-    <h3 class="article-title"><span>一些疑问</span></h3>
+    <h3 class="article-title"><span>第40周总结</span></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2021/09/22/日常困惑/一些疑问/" rel="bookmark">
-        <time class="entry-date published" datetime="2021-09-22T01:49:18.676Z">
-          2021-09-22
+      <a href="/2021/09/27/总结/第40周总结/" rel="bookmark">
+        <time class="entry-date published" datetime="2021-09-27T02:35:44.631Z">
+          2021-09-27
         </time>
       </a>
     </span>
@@ -94,19 +94,29 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>愤青的日常困惑</p>
+        <p>继续保持</p>
 <a id="more"></a>
 
-<h1 id="需要了解的技术"><a href="#需要了解的技术" class="headerlink" title="需要了解的技术"></a>需要了解的技术</h1><p>Netty</p>
-<h1 id="关于互联网产品"><a href="#关于互联网产品" class="headerlink" title="关于互联网产品"></a>关于互联网产品</h1><ul>
-<li>谷歌这个检索系统是怎么做出来的？如何实现在海量数据中对内容的精确匹配？<ul>
-<li>这里的精确匹配一个是指意思的精确匹配，另外一个是指关键字怎么精确匹配的（既要分词，还要海量文本匹配，还能秒级返回）？</li>
-<li>一个想法是把每个文档中的关键字全部拆出来。每个文档按关键字的bit位组成。</li>
+<h1 id="9月27日"><a href="#9月27日" class="headerlink" title="9月27日"></a>9月27日</h1><p>星期一</p>
+<h2 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h2><p>volatile</p>
+<p>零拷贝：到底几次IO?</p>
+<p>普通读取文件IO操作</p>
+<ul>
+<li>方案一：CPU完全参与数据的搬运过程：发起IO请求，磁盘将数据放入磁盘缓冲区，CPU数据把磁盘控制缓冲区数据Copy到Page Cache，然后再Copy到用户缓冲区。</li>
+<li>方案二：DMA搬运数据：IO请求，磁盘缓冲区的数据准备好后，DMA去把磁盘缓冲区的数据读到内核缓冲区，再拷贝到用户缓冲区。</li>
 </ul>
-</li>
-<li>直播这个技术是怎么做到的（实时音视频传输）</li>
-<li>区块链怎么实现的？（技术、经济、政治）</li>
-</ul>
+<h1 id="9月29日"><a href="#9月29日" class="headerlink" title="9月29日"></a>9月29日</h1><p>星期三</p>
+<h2 id="技术-1"><a href="#技术-1" class="headerlink" title="技术"></a>技术</h2><p>看几个概念：音视频传输方面，webrtc，RFC Design，怎么实现udp可靠传输，http音视频推送，rtm，ffmpeg，实时音视频传输</p>
+<p>高带宽、高并发、低时延</p>
+<p>沙漠有丰富的太阳能、雅鲁藏布江有丰富的水能。现在东北停电是怎么回事，国内火热能，地热能，水，风的占比是什么样的？</p>
+<p>信息的编解码似乎是一种通用的手段，可以看作是做一种特征压缩或者是特征提取。但算法千差万别。深度学习的编码容易，但很难再解出原来的信息，音视频包括多种网络请求，要编码，同时希望接收到信息方可以解码出原来的信息。</p>
+<h2 id="领域"><a href="#领域" class="headerlink" title="领域"></a>领域</h2><h2 id="o2o"><a href="#o2o" class="headerlink" title="o2o"></a>o2o</h2><p>线下零售（物美）到现在线上零售淘宝，pdd，又到新零售（我理解是线上线下结合）</p>
+<p>o2o从2010年开始，到现在发展了10年，接下来会往什么方向发展。</p>
+<p>美团和这样的新零售又有什么相通之处？</p>
+<h3 id="比亚迪"><a href="#比亚迪" class="headerlink" title="比亚迪"></a>比亚迪</h3><p>刀片电池</p>
+<p>燃油车、新能源汽车</p>
+<p>云巴，云轨道</p>
+<p>SNS等</p>
 
       
     </div>
@@ -121,7 +131,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/日常困惑/">日常困惑</a>
+        <a href="/categories/总结/">总结</a>
     </span>
     
 
@@ -130,7 +140,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/问题/">问题</a>
+        <a href="/tags/总结/">总结</a>
     </span>
     
 

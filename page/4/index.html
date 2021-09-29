@@ -72,6 +72,75 @@
 
   
     
+    <h3 class="article-title"><a href="/2021/01/03/操作系统/南京大学课程/"><span>南京大学课程</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2021/01/03/操作系统/南京大学课程/" rel="bookmark">
+        <time class="entry-date published" datetime="2021-01-03T09:37:51.015Z">
+          2021-01-03
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>南京大学操作系统课程笔记</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/操作系统/">操作系统</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/课程/">课程</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2021/01/03/操作系统/南京大学课程/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2021/01/02/数据库/lab设置/"><span>lab设置</span></a></h3>
     
   
@@ -687,68 +756,6 @@
         <i class="icon-comments"></i>
         <span>
           <a href="/2020/08/02/Algorithm/BFS/双向广搜/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/07/20/力扣/67. Add Binary/"><span>67. Add Binary</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/07/20/力扣/67. Add Binary/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-07-19T23:09:29.117Z">
-          2020-07-20
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>和上一题是类似的题，通法就是先翻转（低位和高位从0到n), 然后用进位t来加当前的数，模进制更新结果，除以进制，更新进位</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span></span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">addBinary</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">size</span>(a)) <span class="keyword">return</span> b;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">size</span>(b)) <span class="keyword">return</span> a;</span><br><span class="line">        reverse(a.<span class="built_in">begin</span>(), a.<span class="built_in">end</span>());</span><br><span class="line">        reverse(b.<span class="built_in">begin</span>(), b.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">string</span> s = ;</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>, n =<span class="built_in">max</span>(a.<span class="built_in">size</span>(), b.<span class="built_in">size</span>()) ;</span><br><span class="line">        <span class="keyword">while</span>((j&lt;n) || t0) &#123;</span><br><span class="line">            <span class="keyword">if</span>(a.<span class="built_in">size</span>()) t+=(a[j]-<span class="string">'0'</span>);</span><br><span class="line">            <span class="keyword">if</span>(b.<span class="built_in">size</span>()) t+=(b[j]-<span class="string">'0'</span>);</span><br><span class="line">            s+=(<span class="string">'0'</span>+t%<span class="number">2</span>);</span><br><span class="line">            t=<span class="number">2</span>;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        reverse(s.<span class="built_in">begin</span>(), s.<span class="built_in">end</span>());</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/Leetcode/">Leetcode</a>
-    </span>
-    
-
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/07/20/力扣/67. Add Binary/#comment">Comments</a>
         </span>
       </span>
     </div>

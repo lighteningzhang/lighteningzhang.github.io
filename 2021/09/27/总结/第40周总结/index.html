@@ -212,6 +212,94 @@
 </ul>
 <h3 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h3><p>中国有哪些山脉？</p>
 <p>希腊为啥诞生手工业？</p>
+<h1 id="10月1日"><a href="#10月1日" class="headerlink" title="10月1日"></a>10月1日</h1><p>星期五</p>
+<h2 id="技术-3"><a href="#技术-3" class="headerlink" title="技术"></a>技术</h2><h3 id="网络IO演变过程及网络模型介绍"><a href="#网络IO演变过程及网络模型介绍" class="headerlink" title="网络IO演变过程及网络模型介绍"></a>网络IO演变过程及网络模型介绍</h3><ul>
+<li><p>网络IO演变过程</p>
+<ul>
+<li>整体步骤：创建socketfd，bind将fd和地址绑定，listen fd，accept fd。read、write。</li>
+</ul>
+<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/C:%5CUsers%5Clighteningzhang%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211001110036857.png" alt="image-20211001110036857"></p>
+<ul>
+<li><p>阻塞IO</p>
+<ul>
+<li>一个client会消耗一个线程来处理</li>
+<li>大量线程会造成上下文切换影响性能</li>
+</ul>
+</li>
+<li><p>非阻塞IO</p>
+<ul>
+<li>设置<ul>
+<li>SOCK_NONBLOCK可以设置socket为非阻塞</li>
+<li>fcntl将fd设置为非阻塞</li>
+</ul>
+</li>
+<li>与阻塞IO对比<ul>
+<li>内核数据未就绪时，非阻塞IO直接返回EWOULDBLOCK错误。阻塞会一直在阻塞状态，直到数据就绪并拷贝到用户态缓存。</li>
+<li>非阻塞可以一个线程管理多个client连接，缺点：不断轮询内核，数据是否就绪，涉及很多无效频繁的系统调用（？）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>IO复用</p>
+<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/C:%5CUsers%5Clighteningzhang%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211001110739185.png" alt="image-20211001110739185"></p>
+<ul>
+<li>解决非阻塞IO不断主动询问的问题。</li>
+<li>一个观点：IO多路复用实际是复用系统调用</li>
+<li>select、poll<ul>
+<li>问题：全量拷贝fd到内核态，事件就绪后，全量拷贝fd到用户态，只告诉用户有事件就绪（用户不知道哪些事件，要自己去轮询）</li>
+</ul>
+</li>
+<li>epoll<ul>
+<li>ET：事件就绪就触发、LT：事件就绪或就绪事件没处理完</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>信号IO</p>
+<ul>
+<li>信号机制sigaction</li>
+</ul>
+</li>
+<li><p>异步IO</p>
+<ul>
+<li>观点：同步用户自己去拷贝，异步拷贝好给用户</li>
+</ul>
+<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/C:%5CUsers%5Clighteningzhang%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211001114335116.png" alt="image-20211001114335116"></p>
+</li>
+<li><p>IO模式</p>
+<ul>
+<li>Thread-based（阻塞IO）</li>
+</ul>
+<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/C:%5CUsers%5Clighteningzhang%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211001114924477.png" alt="image-20211001114924477"></p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>single-Reactor单线程网络模型</li>
+</ul>
+<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/C:%5CUsers%5Clighteningzhang%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211001115012437.png" alt="image-20211001115012437"></p>
+<ul>
+<li><p>single-reactor线程池模型</p>
+<ul>
+<li>百万高并发也无法承受</li>
+</ul>
+<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/C:%5CUsers%5Clighteningzhang%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211001115218616.png" alt="image-20211001115218616"></p>
+</li>
+<li><p>multi-reactor多线程模型</p>
+</li>
+</ul>
+<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/C:%5CUsers%5Clighteningzhang%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211001115319163.png" alt="image-20211001115319163"></p>
+<p>Redis</p>
+<ul>
+<li>简介</li>
+<li>数据结构</li>
+<li>持久化</li>
+</ul>
+<p>Mysql</p>
+<p>Join buffer?</p>
+<p>云原生</p>
+<p><a href="https://mp.weixin.qq.com/s/yX0hgIOLuaKsAcrWfOfcUQ" target="_blank" rel="noopener">科普文章</a></p>
 
       
     </div>

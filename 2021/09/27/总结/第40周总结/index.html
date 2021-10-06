@@ -218,7 +218,7 @@
 <ul>
 <li>整体步骤：创建socketfd，bind将fd和地址绑定，listen fd，accept fd。read、write。</li>
 </ul>
-<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/C:%5CUsers%5Clighteningzhang%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211001110036857.png" alt="image-20211001110036857"></p>
+<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/image-20211001110036857.png" alt="image-20211001110036857"></p>
 <ul>
 <li><p>阻塞IO</p>
 <ul>
@@ -241,7 +241,7 @@
 </ul>
 </li>
 <li><p>IO复用</p>
-<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/C:%5CUsers%5Clighteningzhang%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211001110739185.png" alt="image-20211001110739185"></p>
+<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/image-20211001110739185.png" alt="image-20211001110739185"></p>
 <ul>
 <li>解决非阻塞IO不断主动询问的问题。</li>
 <li>一个观点：IO多路复用实际是复用系统调用</li>
@@ -264,13 +264,13 @@
 <ul>
 <li>观点：同步用户自己去拷贝，异步拷贝好给用户</li>
 </ul>
-<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/C:%5CUsers%5Clighteningzhang%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211001114335116.png" alt="image-20211001114335116"></p>
+<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/image-20211001114335116.png" alt="image-20211001114335116"></p>
 </li>
 <li><p>IO模式</p>
 <ul>
 <li>Thread-based（阻塞IO）</li>
 </ul>
-<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/C:%5CUsers%5Clighteningzhang%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211001114924477.png" alt="image-20211001114924477"></p>
+<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/image-20211001114924477.png" alt="image-20211001114924477"></p>
 </li>
 </ul>
 </li>
@@ -278,18 +278,18 @@
 <ul>
 <li>single-Reactor单线程网络模型</li>
 </ul>
-<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/C:%5CUsers%5Clighteningzhang%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211001115012437.png" alt="image-20211001115012437"></p>
+<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/image-20211001115012437.png" alt="image-20211001115012437"></p>
 <ul>
 <li><p>single-reactor线程池模型</p>
 <ul>
 <li>百万高并发也无法承受</li>
 </ul>
-<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/C:%5CUsers%5Clighteningzhang%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211001115218616.png" alt="image-20211001115218616"></p>
+<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/image-20211001115218616.png" alt="image-20211001115218616"></p>
 </li>
 <li><p>multi-reactor多线程模型</p>
 </li>
 </ul>
-<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/C:%5CUsers%5Clighteningzhang%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20211001115319163.png" alt="image-20211001115319163"></p>
+<p><img src="/2021/09/27/%E6%80%BB%E7%BB%93/%E7%AC%AC40%E5%91%A8%E6%80%BB%E7%BB%93/image-20211001115319163.png" alt="image-20211001115319163"></p>
 <p>Redis</p>
 <ul>
 <li>简介</li>
@@ -300,6 +300,14 @@
 <p>Join buffer?</p>
 <p>云原生</p>
 <p><a href="https://mp.weixin.qq.com/s/yX0hgIOLuaKsAcrWfOfcUQ" target="_blank" rel="noopener">科普文章</a></p>
+<h1 id="10月3日"><a href="#10月3日" class="headerlink" title="10月3日"></a>10月3日</h1><p>星期天</p>
+<h2 id="技术-4"><a href="#技术-4" class="headerlink" title="技术"></a>技术</h2><p>内存分配：buddy-&gt;slab-&gt;object</p>
+<p>buddy包含多个2^n大小的页（可以看作多级链表，每个链表分配的页面为2^i）</p>
+<p>一个slab通常由一个page组成，之所以用slab是避免内存碎片（页是按4k为单位），slab单位是xx字节。</p>
+<h2 id="学习方法"><a href="#学习方法" class="headerlink" title="学习方法"></a>学习方法</h2><h2 id="学习方法总结"><a href="#学习方法总结" class="headerlink" title="学习方法总结"></a>学习方法总结</h2><ol>
+<li>对比学习（参考IO那堂课的ppt，用表格形式进行总结归纳）</li>
+<li>列步骤学习（参考linux内存这堂课，对于一个操作有哪些步骤，以及为什么有这些步骤，用1，2，3，4列出）</li>
+</ol>
 
       
     </div>

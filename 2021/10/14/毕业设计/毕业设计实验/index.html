@@ -3,7 +3,7 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>毕业 | Incity</title>
+  <title>毕业设计实验 | Incity</title>
 
   
   <meta name="author" content="lighteningzhang">
@@ -14,12 +14,15 @@
   
 
   
+  
+  <meta name="keywords" content="毕业设计">
+  
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  
+  <meta property="og:title" content="毕业设计实验"/>
 
   <meta property="og:site_name" content="Incity"/>
 
@@ -67,32 +70,107 @@
 </header>
 
     <main class="site-main posts-loop">
-    
+    <article>
 
-<article>
-
-  <h3 class="article-title  tag">毕业</h3>
-
-  <div class="archive">
-    
-      <div class="post archive">
-        <div class="archive-post">
-          <time datetime="2021-09-17T01:45:09.816Z">
-            <a href="/2021/09/17/毕业设计/毕设提纲和计划/">2021-09-17</a>
-          </time>
-          
-            <h3 class="archive-title"><a href="/2021/09/17/毕业设计/毕设提纲和计划/"><span>毕设提纲和计划</span></a></h3>
-          
-        </div>
-      </div>
-    
-    <nav class="pagination">
   
+    
+    <h3 class="article-title"><span>毕业设计实验</span></h3>
+    
   
-</nav>
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2021/10/14/毕业设计/毕业设计实验/" rel="bookmark">
+        <time class="entry-date published" datetime="2021-10-14T02:19:43.157Z">
+          2021-10-14
+        </time>
+      </a>
+    </span>
   </div>
 
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>毕业设计实验记录</p>
+<a id="more"></a>
+
+<h1 id="实验的部分"><a href="#实验的部分" class="headerlink" title="实验的部分"></a>实验的部分</h1><p>实验路径</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/lighteningzhang/codeForGra/MNGAT_anomaly/MASGAT</span><br></pre></td></tr></table></figure>
+
+<p>数据集路径（之后存放数据集都存在这个位置）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/lighteningzhang/codeForGra/dataset</span><br></pre></td></tr></table></figure>
+
+<p>查看最新日志中error差值排名前100的节点中，有多少是异常节点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls output/ -ltr | tail -n 1 | awk -F<span class="string">" "</span> <span class="string">'&#123;print $NF&#125;'</span>| xargs -i cat output/&#123;&#125; | head -n 100 | grep 1 | wc -l</span><br></pre></td></tr></table></figure>
+
+<p>成功的模型记录的位置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/lighteningzhang/codeForGra/MNGAT_anomaly/MASGAT/successModel</span><br></pre></td></tr></table></figure>
+
+
+
+<p>怎么画图？</p>
+<ol>
+<li>记录数据</li>
+<li>画图</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/毕业设计/">毕业设计</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/毕业设计/">毕业设计</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
 </article>
+
+  
+
+	<section id="comment" class="comment">
+		<div id="vcomments"></div>
+	</section>
+	<!-- LeanCloud -->
+	<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
+	<!-- Valine -->
+	<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+	<script>
+		new Valine({
+			el: '#vcomments',
+			appId: 'wxIUQun2GGDCis4l6FcyAkJ8-gzGzoHsz',
+			appKey: 'JY9ERkASDUoTaPjpDrP34QeV'
+		})
+	</script>
+
+
+
+
+
+
     </main>
 
     <footer class="site-footer">

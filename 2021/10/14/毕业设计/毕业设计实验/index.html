@@ -110,6 +110,19 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/lighteningzhang/codeForGra/MNGAT_anomaly/MASGAT/successModel</span><br></pre></td></tr></table></figure>
 
 <p>准备对比的baseline</p>
+<ul>
+<li>局部异常因子(Local Outlier Factor, LOF)</li>
+<li>孤立森林（Isolation Forest, IF）</li>
+<li>Dominant（Deep Anomaly Detection on Attributed Networks）</li>
+</ul>
+<p>参考指标：</p>
+<p>ROC曲线，AUC score</p>
+<p>Precision, Recall</p>
+<ul>
+<li>Precision = 预测中真正正确item数量 / 预测正确item数量</li>
+<li>Recall = 预测中真正正确item数量 / 真实正确item数量</li>
+</ul>
+<p>Precision@k, Recall@k</p>
 <p>怎么画图？</p>
 <ol>
 <li>记录数据</li>

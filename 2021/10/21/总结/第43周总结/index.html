@@ -3,7 +3,7 @@
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
-  <title>毕业设计实验 | Incity</title>
+  <title>第43周总结 | Incity</title>
 
   
   <meta name="author" content="lighteningzhang">
@@ -15,14 +15,14 @@
 
   
   
-  <meta name="keywords" content="毕业设计">
+  <meta name="keywords" content="总结">
   
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <meta property="og:title" content="毕业设计实验"/>
+  <meta property="og:title" content="第43周总结"/>
 
   <meta property="og:site_name" content="Incity"/>
 
@@ -74,15 +74,15 @@
 
   
     
-    <h3 class="article-title"><span>毕业设计实验</span></h3>
+    <h3 class="article-title"><span>第43周总结</span></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2021/10/14/毕业设计/毕业设计实验/" rel="bookmark">
-        <time class="entry-date published" datetime="2021-10-14T02:19:43.157Z">
-          2021-10-14
+      <a href="/2021/10/21/总结/第43周总结/" rel="bookmark">
+        <time class="entry-date published" datetime="2021-10-21T06:23:11.113Z">
+          2021-10-21
         </time>
       </a>
     </span>
@@ -94,45 +94,17 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>毕业设计实验记录</p>
+        <p>主要对自身的一些谋划、执行、心态、陋习的一些分析总结</p>
 <a id="more"></a>
 
-<h1 id="实验的部分"><a href="#实验的部分" class="headerlink" title="实验的部分"></a>实验的部分</h1><p>实验路径</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/lighteningzhang/codeForGra/MNGAT_anomaly/MASGAT</span><br></pre></td></tr></table></figure>
-
-<p>数据集路径（之后存放数据集都存在这个位置）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/lighteningzhang/codeForGra/dataset</span><br></pre></td></tr></table></figure>
-
-<p>查看最新日志中error差值排名前100的节点中，有多少是异常节点</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls output/ -ltr | tail -n 1 | awk -F<span class="string">" "</span> <span class="string">'&#123;print $NF&#125;'</span>| xargs -i cat output/&#123;&#125; | head -n 100 | grep 1 | wc -l</span><br></pre></td></tr></table></figure>
-
-<p>成功的模型记录的位置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/lighteningzhang/codeForGra/MNGAT_anomaly/MASGAT/successModel</span><br></pre></td></tr></table></figure>
-
-<p>传输文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find imdb_preprocess_anomaly/ -maxdepth 1 -<span class="built_in">type</span> f | grep -v  <span class="string">"movie0"</span> | xargs -i scp -P 10003 -r &#123;&#125; gdp@122.51.159.29:/home/gdp/jczhang/dataset/imdb_preprocess_anomaly</span><br></pre></td></tr></table></figure>
-
-
-
-<p>准备对比的baseline</p>
-<ul>
-<li>局部异常因子(Local Outlier Factor, LOF)</li>
-<li>孤立森林（Isolation Forest, IF）</li>
-<li>Dominant（Deep Anomaly Detection on Attributed Networks）</li>
-</ul>
-<p>参考指标：</p>
-<p>ROC曲线，AUC score</p>
-<p>Precision, Recall</p>
-<ul>
-<li>Precision = 预测中真正正确item数量 / 预测正确item数量</li>
-<li>Recall = 预测中真正正确item数量 / 真实正确item数量</li>
-</ul>
-<p>Precision@k, Recall@k</p>
-<p>怎么画图？</p>
-<ol>
-<li>记录数据</li>
-<li>画图</li>
-</ol>
+<h2 id="谋划能力"><a href="#谋划能力" class="headerlink" title="谋划能力"></a>谋划能力</h2><p>这部分是战略上的，在象棋里叫布局能力或者想走到某种局面的谋算能力。着眼大局，做出判定和判断。这部分的能力会影响到后面的一系列的东西，包括执行力、心态等。</p>
+<p>一个通俗的例子可以对上一段进行佐证。比如，一个农民想要摆脱农民这个身份，那必然需要走出农村，去北上广深等大城市，去这些城市当然是需要真正的执行，如坐飞机或者火车去，但做出要去这些城市的这个决定就源于一个农民的谋划能力。如果他不会做谋划，仅是战术很好，那可能也只是庄稼比别人种的好一点，没法走上一个更高的平台。做一个好的谋划，只是成功的必要条件，非充分条件，一个谋划甚至可能导致倾家荡产。</p>
+<p>如何进行谋划？怎么判断当下可以进行哪些谋划？怎么才能做一个正确的谋划？是我当下想到的对于做谋划需要培养起的三个能力。</p>
+<p>对自己定位的判断是很关键的一步。即自己到底有什么价值，未来还能在某些方面创造出更多的价值。除了自身的判断，对大环境和未来的判断也是必不可少的，自己在行业里处于什么位置，行业未来会向什么方向发展。而这需要多对时事进行了解，对多源信息进行充分总结吸收。</p>
+<p>回答这三个问题，关键还需要了解进行谋划的模式，而这个模式，需要从书和历史中来，从经验中来，从探索中来。</p>
+<h2 id="执行力"><a href="#执行力" class="headerlink" title="执行力"></a>执行力</h2><p>这部分是战术上的。</p>
+<h2 id="心态"><a href="#心态" class="headerlink" title="心态"></a>心态</h2><p>这部分是对于日常生活影响最大的。</p>
+<h2 id="必须纠正的陋习"><a href="#必须纠正的陋习" class="headerlink" title="必须纠正的陋习"></a>必须纠正的陋习</h2><p>这部分是对未来生活影响较大的。</p>
 
       
     </div>
@@ -147,7 +119,7 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/毕业设计/">毕业设计</a>
+        <a href="/categories/总结/">总结</a>
     </span>
     
 
@@ -156,7 +128,7 @@
 
     <span class="post-tags">
       <i class="icon-tags"></i>
-        <a href="/tags/毕业设计/">毕业设计</a>
+        <a href="/tags/总结/">总结</a>
     </span>
     
 

@@ -72,6 +72,558 @@
 
   
     
+    <h3 class="article-title"><a href="/2020/07/18/力扣/1513. Number of Substrings With Only 1s/"><span>1513. Number of Substrings With Only 1s</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/07/18/力扣/1513. Number of Substrings With Only 1s/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-07-17T16:21:40.806Z">
+          2020-07-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>Simple if else and add method</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Leetcode/">Leetcode</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/if-else-add/">if else add</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/07/18/力扣/1513. Number of Substrings With Only 1s/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/07/18/力扣/60. Permutation Sequence/"><span>60. Permutation Sequence</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/07/18/力扣/60. Permutation Sequence/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-07-17T16:21:40.804Z">
+          2020-07-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>cantor逆展开</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">fact</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span> || n==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> fact(n<span class="number">-1</span>)*n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">getPermutation</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res = <span class="string">""</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;vis(n+<span class="number">1</span>);</span><br><span class="line">        k = k<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> m;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> t=n<span class="number">-1</span>;t&gt;=<span class="number">0</span>;t--) &#123;</span><br><span class="line">            <span class="keyword">int</span> cnt = <span class="number">0</span>, cf = fact(t);</span><br><span class="line">            <span class="keyword">int</span> cur = k/cf;</span><br><span class="line">            k = k%cf;</span><br><span class="line">            <span class="keyword">for</span>(m=<span class="number">1</span>;m&lt;=n;m++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(!vis[m]) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(!cur) <span class="keyword">break</span>;</span><br><span class="line">                    cur--;<span class="comment">// 往后走</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            vis[m] = <span class="number">1</span>;</span><br><span class="line">            res+=(<span class="string">'0'</span>+m);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Leetcode/">Leetcode</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/permutation/">permutation</a><a href="/tags/cantor/">cantor</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/07/18/力扣/60. Permutation Sequence/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/07/18/力扣/59. Spiral Matrix II/"><span>59. Spiral Matrix II</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/07/18/力扣/59. Spiral Matrix II/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-07-17T16:21:40.803Z">
+          2020-07-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>和第一道螺旋矩阵几乎一样</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Leetcode/">Leetcode</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/matrix/">matrix</a><a href="/tags/direction/">direction</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/07/18/力扣/59. Spiral Matrix II/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/07/18/力扣/57. Insert Interval/"><span>57. Insert Interval</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/07/18/力扣/57. Insert Interval/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-07-17T16:21:40.801Z">
+          2020-07-18
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>Simple if else and merge</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Leetcode/">Leetcode</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/if-else-add/">if else add</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/07/18/力扣/57. Insert Interval/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/07/12/力扣/53 Maximum Subarray/"><span>53 Maximum Subarray</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/07/12/力扣/53 Maximum Subarray/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-07-12T14:10:56.555Z">
+          2020-07-12
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>一共两种做法，一个是在线处理，一个是分治。</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Leetcode/">Leetcode</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/07/12/力扣/53 Maximum Subarray/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/06/01/力扣/3 Longest Substring Without Repeating Chars/"><span>3 Longest Substring Without Repeating Chars</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/06/01/力扣/3 Longest Substring Without Repeating Chars/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-06-01T14:07:08.894Z">
+          2020-06-01
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>双指针+map，注意这里符号可能不是只限于a,b,c这类字符，也可能是空格，因此<del>map不能改为数组</del> ( 打脸,  这里char其实根本不用转换为int。用数组的化，数组大小就开ascii码的最大值 256</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Leetcode/">Leetcode</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/map-two-pointers/">map, two pointers</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/06/01/力扣/3 Longest Substring Without Repeating Chars/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/06/01/力扣/1 Two Sum/"><span>1 Two sum</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/06/01/力扣/1 Two Sum/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-06-01T13:15:01.235Z">
+          2020-06-01
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>STL容器使用</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Leetcode/">Leetcode</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/STL/">STL</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/06/01/力扣/1 Two Sum/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2020/05/15/Algorithm/博弈论/Nim1/"><span>Basic Nim game</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2020/05/15/Algorithm/博弈论/Nim1/" rel="bookmark">
+        <time class="entry-date published" datetime="2020-05-15T00:25:39.377Z">
+          2020-05-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p>Nim游戏是指两名选手进行一个游戏，每次每个选手可以进行一种操作，直至某个选手无法进行操作为止，此时无法进行操作的选手失败。这次讨论的是最基本的Nim游戏：n堆石子里拿石子，每次每人可以在一堆中拿一部分或全部拿完，先手是否有必胜策略。<br>此游戏的关键是找到必胜态和必败态。必胜态即$ a_1\oplus a_2\oplus a_3\oplus a_4\cdots\oplus a_n=x, x\neq0$, 必败态即为$a_1\oplus a_2\oplus  a_3\oplus a_4\cdots\oplus a_n=0$, 具体证明即包含x的为1的最高位对应左式中的$a_i$, $a_i-a_i\oplus x&gt;0$, 于是从$a_i$中拿走$a_i-a_i\oplus x$后，还剩$a_i\oplus x$，于是 $ a_1\oplus a_2\oplus a_3\oplus a_4\cdots\oplus a_n\oplus x=x\oplus x=0$，此时为必败态。而必败态的证明较为简单。在了解原理后，此题代码也较容易</p>
+        
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Game-theory/">Game theory</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2020/05/15/Algorithm/博弈论/Nim1/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2020/05/09/Algorithm/二部图/Coloring bipartite graph/"><span>Coloring bipartite graph</span></a></h3>
     
   
@@ -206,86 +758,13 @@
 
 
 
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2020/12/31/总结/2020年终总结/"><span>2020年终总结</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2020/12/31/总结/2020年终总结/" rel="bookmark">
-        <time class="entry-date published" datetime="2020-12-31T14:58:57.597Z">
-          2020-12-31
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <ul>
-<li>做事抓重点（不管再难懂的概念都能用一句话简单表达出来，不然其实自己并没理解）</li>
-<li>文件管理（文件命名和log很重要）</li>
-<li>技术深度（类似先dfs再bfs）</li>
-<li>每段时间能进行转化</li>
-<li>总结成为自己的体系（系统性的覆盖面）</li>
-</ul>
-        
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-      
-
-    <span class="post-categories">
-      <i class="icon-categories"></i>
-        <a href="/categories/总结/">总结</a>
-    </span>
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/年度总结/">年度总结</a>
-    </span>
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2020/12/31/总结/2020年终总结/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
 
 <nav class="pagination">
   
   <a href="/page/9/" class="pagination-prev">Prev</a>
   
+  
+  <a href="/page/11/" class="pagination-next">Next</a>
   
 </nav>
     </main>
